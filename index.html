@@ -58,6 +58,10 @@
         <div id="search result">
 
         </div>
+        <div class="icon" onclick="mc18()" id="mc18">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('mc18');"></span>
+            <p style="color: white;">Minecraft<br>Biches</p>
+        </div>
         <div class="icon" onclick="awesometanks()" id="awesometanks">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('awesometanks');"></span>
             <p style="color: white;">Awesome<br>Tanks 2</p>
@@ -465,6 +469,11 @@
     #awesometanks:hover{
         background-size: cover;
         background-image: url(animations/awesometanks.png);
+        background-position: center;
+    }
+    #mc18:hover{
+        background-size: cover;
+        background-image: url(animations/mc18.png);
         background-position: center;
     }
     #toydefense:hover{

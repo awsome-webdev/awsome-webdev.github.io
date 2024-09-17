@@ -20,6 +20,17 @@ function awesometanks(){
     document.getElementById('x').style.display = "block";
     close = 1;
 }
+function mc18(){
+    const nparent = document.getElementById("nparent");
+    const parent = document.getElementById("parent");
+    const app = document.getElementById("app");
+    location.href = "games/mc18.html";
+    app.style.display = "block";
+    parent.style.display = "none";
+    document.getElementById('sidebar').style.display = "none";
+    document.getElementById('x').style.display = "block";
+    close = 1;
+}
 function closea(){
     if (close == 1) {
         const parent = document.getElementById("parent");
