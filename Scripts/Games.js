@@ -42,6 +42,17 @@ function teritory(){
     document.getElementById('x').style.display = "block";
     close = 1;
 }
+function popp(){
+    const nparent = document.getElementById("nparent");
+    const parent = document.getElementById("parent");
+    const app = document.getElementById("app");
+    app.src = 'games/PapasPizzeria-gh-pages/index.html'
+    app.style.display = "block";
+    parent.style.display = "none";
+    document.getElementById('sidebar').style.display = "none";
+    document.getElementById('x').style.display = "block";
+    close = 1;
+}
 function closea(){
     if (close == 1) {
         const parent = document.getElementById("parent");
