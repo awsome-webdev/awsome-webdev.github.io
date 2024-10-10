@@ -8729,28 +8729,39 @@
     }
 </style>
 <script>
-    var queue = []
-    var ele = document.getElementsByClassName('song')
-    for (let i = 0; i < ele.length; i++){
-        let element = ele[i]
-        element.innerHTML = "<p class='text'>Title: " + element.getAttribute('title') + "</p>" + "<p class='text'>Artist: " + element.getAttribute('artist') + "</p> <button onclick='event.stopPropagation(); queue1(event)' style='margin: 5px;'>Queue</button>"
-    }
-    function PLAY(event){
-        const audio = document.getElementsByTagName('audio')[0]
-        const src = document.getElementById('src')
-        const ele = event.target;
-        const songtitle = ele.getAttribute('title');
-        const songartist = ele.getAttribute('artist');
-        const songalbum = ele.getAttribute('album');
-        src.setAttribute('src', ele.getAttribute('src'))
-        audio.load()
-        setTimeout(() => {
-            audio.play()
-        }, 1000);
-        document.getElementById('songtitle').textContent = songtitle
-        document.getElementById('songartist').textContent = songartist
-        document.getElementById('songalbum').textContent = songalbum
-    }
+    var queue = [];
+var ele = document.getElementsByClassName('song');
+
+for (let i = 0; i < ele.length; i++) {
+    let element = ele[i];
+    element.innerHTML = "<p class='text'>Title: " + element.getAttribute('title') + "</p>" +
+        "<p class='text'>Artist: " + element.getAttribute('artist') + "</p>" +
+        "<button onclick='event.stopPropagation(); queue1(event)' style='margin: 5px;'>Queue</button>";
+}
+
+function PLAY(event) {
+    const audio = document.getElementsByTagName('audio')[0];
+    const src = document.getElementById('src');
+    const ele = event.target;
+    const songtitle = ele.getAttribute('title');
+    const songartist = ele.getAttribute('artist');
+    const songalbum = ele.getAttribute('album');
+
+    // Update this line to point to your API endpoint
+    const songUrl = `https://your-vercel-deployment-url/api/proxy?url=${encodeURIComponent('http://example.com/path/to/song.mp3')}`;
+    
+    src.setAttribute('src', songUrl);
+    audio.load();
+    setTimeout(() => {
+        audio.play();
+    }, 1000);
+    document.getElementById('songtitle').textContent = songtitle;
+    document.getElementById('songartist').textContent = songartist;
+    document.getElementById('songalbum').textContent = songalbum;
+}
+
+// Rest of your existing code...
+
     function pandp(){
         const audio = document.getElementsByTagName('audio')[0]
         var playState = audio.paused ? "Paused" : "Playing";
@@ -8777,12 +8788,14 @@
             queue.shift()
             console.log(queue[0])
     }
-    function queue1(event){
-        const div = event.target.parentNode
-        console.log(div)
-        queue.push(div.getAttribute('src'))
-        console.log(queue)
-    }
+    function queue1(event) {
+    const div = event.target.parentNode;
+    const songUrl = `https://your-vercel-deployment-url/api/proxy?url=${encodeURIComponent('http://example.com/path/to/song.mp3')}`;
+    
+    queue.push(songUrl);
+    console.log(queue);
+}
+
     const audioElement = document.getElementsByTagName('audio')[0];
 
         audioElement.addEventListener('ended', () => {
