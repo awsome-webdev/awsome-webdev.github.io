@@ -8750,23 +8750,6 @@
         document.getElementById('songtitle').textContent = songtitle
         document.getElementById('songartist').textContent = songartist
         document.getElementById('songalbum').textContent = songalbum
-        const url = ele.getAttribute('src');
-        jsmediatags.read(url, {
-            onSuccess: function(tag) {
-                console.log(tag); // Log the tag information
-                const picture = tag.tags.picture;
-                if (picture) {
-                    const albumCover = document.getElementById('albumCover');
-                    const base64String = arrayBufferToBase64(picture.data);
-                    albumCover.src = `data:${picture.format};base64,${base64String}`;
-                } else {
-                    console.error('No album cover found in the metadata.');
-                }
-            },
-            onError: function(error) {
-                console.error('Error reading metadata:', error);
-            }
-        });
     }
     function pandp(){
         const audio = document.getElementsByTagName('audio')[0]
