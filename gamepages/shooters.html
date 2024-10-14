@@ -3,6 +3,10 @@
         <button id="x" onclick="closea()">X</button>
     <div id="parent">
         <center>
+        <div class="icon" onclick="awesometanks()" id="awesometanks">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('awesometanks');"></span>
+            <p style="color: white;">Awesome<br>Tanks 2</p>
+        </div>
         <div class="icon" onclick="archer()" id="archer">
             <p style="color: white;">Archer Game</p>
         </div>
@@ -21,6 +25,18 @@
         <div class="icon" onclick="artspace()" id="artspace">
             <p style="color: white;">Ascii<br>Space</p>
         </div>
+        <div class="icon" onclick="evilglitch()" id="evilglitch">
+            <p style="color: white;">Evil<br>Glitch</p>
+        </div>
+        <div class="icon" onclick="q1()" id="q1">
+            <p style="color: white;">q1k3<br>(shooter)</p>
+        </div>
+        <div class="icon" onclick="rooftopsniper()" id="rooftopsniper">
+            <p style="color: white;">RoofTop<br>Sniper</p>
+        </div>
+        <div class="icon" onclick="underrun()" id="underrun">
+            <p style="color: white;">Under<br>Run</p>
+        </div>
         </center>
     </div>
     </body>
@@ -29,6 +45,31 @@
     </iframe>
 </html>
 <style>
+    #awesometanks:hover{
+        background-size: cover;
+        background-image: url(animations/awesometanks.png);
+        background-position: center;
+    }
+    #underrun:hover{
+        background-size: cover;
+        background-image: url(../animations/underrun.png);
+        background-position: center;
+    }
+    #rooftopsniper:hover{
+        background-size: cover;
+        background-image: url(../animations/rooftopsniper.png);
+        background-position: center;
+    }
+    #q1:hover{
+        background-size: cover;
+        background-image: url(../animations/q1k3.png);
+        background-position: center;
+    }
+    #evilglitch:hover{
+        background-size: cover;
+        background-image: url(../animations/evilglitch.png);
+        background-position: center;
+    }
     #artspace:hover{
         background-size: cover;
         background-image: url(../animations/artspace.png);
@@ -165,14 +206,14 @@
         padding: 50px;
         border-style: solid;
         border-radius: 20px;
+        border-color: white;
         text-align: center;
         vertical-align: center;
-        background-color: #5c5b59;
+        background-color: transparent;
         width: 60px;
-        max-height: 60px;
+        min-height: 60px;
         margin: 10px;
         display: inline-block;
-
     }
     .icon:hover{
         cursor: pointer;
@@ -230,6 +271,61 @@
 </style>
 <script type="text/javascript">
     var close = 0;
+        function awesometanks(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+        const app = document.getElementById("app");
+        app.src = "https://ubg98.github.io/AwesomeTanks2/";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function underrun(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/underrun/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function rooftopsniper(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/rooftopsniper/play/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function q1(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/q1k3/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function evilglitch(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/evilglitch/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
     function artspace(){
         const nparent = document.getElementById("nparent");
         const parent = document.getElementById("parent");
@@ -252,121 +348,11 @@
         document.getElementById('x').style.display = "block";
         close = 1;
     }
-    function spacebuggy(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "https://playcanv.as/p/3RerJIcy/";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
     function robotshooter(){
         const nparent = document.getElementById("nparent");
         const parent = document.getElementById("parent");
 	    const app = document.getElementById("app");
         app.src = "https://playcanv.as/p/BAuoCOx6/";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function gangdomstyle(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "https://playcanv.as/p/iCL6sxgF/";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function towerclimb(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "Tower_Climb.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function clearg(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "../games/Clear.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function oretycoon(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "../games/ORE Tycoon.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function Cashtycoon(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "../games/Cash Tycoon.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function themetycoon(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "../games/Themetycoon.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function dinogame(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "../games/dinogame.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function CandyClicker(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "../games/Candy Clicker.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function Tunrun(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "../games/Tunnel Runner 3D.html";
         app.style.display = "block";
         parent.style.display = "none";
         nparent.style.display = "none";
@@ -393,123 +379,7 @@
         parent.style.display = "none";
         nparent.style.display = "none";
         document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function among(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "Amongus.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function Dcity(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "https://lo-th.github.io/3d.city/index.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function nseries(){
-        const nparent = document.getElementById("nparent");
-        nparent.style.display = "contents";
-    }
-    function ninja1(){
-        const parent = document.getElementById("nparent");
-	    const app = document.getElementById("app");
-        app.src = "../ninja island/1.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function ninja2(){
-        const parent = document.getElementById("nparent");
-	    const app = document.getElementById("app");
-        app.src = "../ninja island/2.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function ninja3(){
-        const parent = document.getElementById("nparent");
-	    const app = document.getElementById("app");
-        app.src = "../ninja island/3.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function ninja4(){
-        const parent = document.getElementById("nparent");
-	    const app = document.getElementById("app");
-        app.src = "../ninja island/4.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function ninja5(){
-        const parent = document.getElementById("nparent");
-	    const app = document.getElementById("app");
-        app.src = "../ninja island/5.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function ninja6(){
-        const parent = document.getElementById("nparent");
-	    const app = document.getElementById("app");
-        app.src = "../ninja island/6.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function ninja7(){
-        const parent = document.getElementById("nparent");
-	    const app = document.getElementById("app");
-        app.src = "../ninja island/7.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function ninja8(){
-        const parent = document.getElementById("nparent");
-	    const app = document.getElementById("app");
-        app.src = "../ninja island/8.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function ninja9(){
-        const parent = document.getElementById("nparent");
-	    const app = document.getElementById("app");
-        app.src = "../ninja island/9.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function ninja10(){
-        const parent = document.getElementById("nparent");
-	    const app = document.getElementById("app");
-        app.src = "../ninja island/10.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
+        close = 1
     }
     function closea(){
         if (close == 1) {
@@ -524,7 +394,4 @@
         }
         close = 0;
     }
-</script>
-<script id="sidebar2">
-
 </script>

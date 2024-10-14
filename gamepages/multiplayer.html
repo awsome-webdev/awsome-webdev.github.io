@@ -1,0 +1,171 @@
+<html>
+    <body id="body">
+        <button id="x" onclick="closea()">X</button>
+    <div id="parent">
+        <center>
+            <div class="icon" onclick="basketballstars()" id="basketballstars">
+                <p style="color: white;">Basketball<br>Stars</p>
+            </div>
+            <div class="icon" onclick="paperio()" id="paperio">
+                <p style="color: white;">Paper<br>IO</p>
+            </div>
+     </center>
+    </body>
+    <iframe id="app">
+            
+    </iframe>
+</html>
+<style>
+    #paperio:hover{
+        background-size: cover;
+        background-image: url(../animations/paperio.png);
+        background-position: center;
+    }
+    #basketballstars:hover{
+        background-size: cover;
+        background-image: url(../animations/Basketballstars.png);
+        background-position: center;
+    }
+    .sideicon{
+        position: relative;
+        border-radius: 20px;
+        width: 90%;
+        height: 30px;
+        background-color: #5c5b59;
+        text-align: center;
+        padding: 10px;
+        margin: 5px;
+    }
+    .sideicon:hover{
+        cursor: pointer;
+    }
+    #sidebar{
+        border-style: solid;
+        border-color: white;
+        position: absolute;
+        right: 0px;
+        width: 33%;
+        min-height: 100%;
+    }
+    #menu{
+        display: none;
+        position: absolute;
+        width: 50%;
+        height: 70%;
+        left: 25%;
+    }
+    #body{
+        background-color: black;
+    }
+    .icon{
+        position: relative;
+        padding: 50px;
+        border-style: solid;
+        border-radius: 20px;
+        border-color: white;
+        text-align: center;
+        vertical-align: center;
+        background-color: transparent;
+        width: 60px;
+        min-height: 60px;
+        margin: 10px;
+        display: inline-block;
+    }
+    .icon:hover{
+        cursor: pointer;
+    }
+    .subicon{
+        position: relative;
+        z-index: 2;
+        padding: 30px;
+        border-style: solid;
+        border-radius: 20px;
+        text-align: center;
+        background-color: #5c5b59;
+        width: 50%;
+        margin: auto; 
+    }
+    .subicons:hover{
+        cursor: pointer;
+    }
+    #nparent{
+        display: none;
+    }
+    #x{
+	    position: absolute;
+        border-radius: 200px;
+        top: 0px;
+        left: 98.5%;
+        z-index: 2;
+    }
+    #app{
+        position: absolute;
+        top: 0%;
+        left: 0%;
+	    width: 100%;
+        height: 100%;
+        display: none;
+        border-color: white;
+        background-color: black;
+   }
+   .nbutton{
+        display: none;
+        padding: 30px;
+        border-style: solid;
+        border-radius: 20px;
+        text-align: center;
+        background-color: #5c5b59;
+        width: 60px;
+        margin: 10px;
+   }
+   /* Hide horizontal scrollbar */
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide vertical scrollbar */
+    body {
+        overflow: hidden;
+    }
+</style>
+<script type="text/javascript">
+    var close = 0;
+    function paperio(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/paperio/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function basketballstars(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/basketballstars/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function closea(){
+        if (close == 1) {
+            const parent = document.getElementById("parent");
+	        const app = document.getElementById("app");
+            app.style.display = "none";
+            parent.style.display = "block";
+            app.src = "";
+        }
+        if (close == 0){
+            location.href = "../index.html";
+        }
+        close = 0;
+    }
+</script>
+<script id="sidebar2">
+
+</script>

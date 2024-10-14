@@ -1,0 +1,22 @@
+// Example array with keys and objects
+const mixedArray = [
+    {name: 'Object 1' },
+    {name: 'Object 2' },
+    {name: 'Object 3' }
+];
+
+// Process each key-object pair consecutively
+for (let i = 0; i < mixedArray.length; i += 2) {
+    const key = mixedArray[i];
+    const obj = mixedArray[i + 1];
+
+    // Assuming you have a function called processPair to process each key-object pair
+    processPair(key, obj);
+}
+
+// Define the processPair function
+function processPair(key, obj) {
+    console.log("Processing Key:", key);
+    console.log("Processing Object:", obj);
+    // Your processing logic goes here...
+}

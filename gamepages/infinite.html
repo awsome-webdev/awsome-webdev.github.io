@@ -3,6 +3,9 @@
         <button id="x" onclick="closea()">X</button>
     <div id="parent">
         <center>
+        <div class="icon" onclick="sandgame()" id="sandgame">
+            <p style="color: white;">Sand<br>Game</p>
+        </div>    
         <div class="icon" onclick="spacebuggy()" id="spacebuggy">
             <p style="color: white;">Space Buggy</p>
         </div>
@@ -27,6 +30,33 @@
         <div class="icon" onclick="astray()" id="astray">
             <p style="color: white;">Astray<br>Maze</p>
         </div>
+        <div class="icon" onclick="breakout()" id="breakout">
+            <p style="color: white;">ATARI<br>BREAKOUT</p>
+        </div>
+        <div class="icon" onclick="crossyroad()" id="crossyroad">
+            <p style="color: white;">Crossy<br>Road</p>
+        </div>
+        <div class="icon" onclick="edgesurf()" id="edgesurf">
+            <p style="color: white;">Edge<br>Surf</p>
+        </div>
+        <div class="icon" onclick="pacman()" id="pacman">
+            <p style="color: white;">HTML<br>Pacman</p>
+        </div>
+        <div class="icon" onclick="paperio()" id="paperio">
+            <p style="color: white;">Paper<br>IO</p>
+        </div>
+        <div class="icon" onclick="racer()" id="racer">
+            <p style="color: white;">Pixle<br>Racer</p>
+        </div>
+        <div class="icon" onclick="run3()" id="run3">
+            <p style="color: white;">Run<br>3</p>
+        </div>
+        <div class="icon" onclick="stack()" id="stack">
+            <p style="color: white;">Stack<br>Game</p>
+        </div>
+        <div class="icon" onclick="stacktower()" id="stacktower">
+            <p style="color: white;">Stack<br>Tower</p>
+        </div>
     </div>
      </center>
     </body>
@@ -35,6 +65,56 @@
     </iframe>
 </html>
 <style>
+    #stacktower:hover{
+        background-size: cover;
+        background-image: url(../animations/stacktower.png);
+        background-position: center;
+    }
+    #stack:hover{
+        background-size: cover;
+        background-image: url(../animations/stack.png);
+        background-position: center;
+    }
+    #run3:hover{
+        background-size: cover;
+        background-image: url(../animations/run3.png);
+        background-position: center;
+    }
+    #racer:hover{
+        background-size: cover;
+        background-image: url(../animations/racer.png);
+        background-position: center;
+    }
+    #sandgame:hover{
+        background-size: cover;
+        background-image: url(../animations/sandgame.png);
+        background-position: center;
+    }
+    #paperio:hover{
+        background-size: cover;
+        background-image: url(../animations/paperio.png);
+        background-position: center;
+    }
+    #pacman:hover{
+        background-size: cover;
+        background-image: url(../animations/pacman.png);
+        background-position: center;
+    }
+    #edgesurf:hover{
+        background-size: cover;
+        background-image: url(../animations/edgesurf.png);
+        background-position: center;
+    }
+    #crossyroad:hover{
+        background-size: cover;
+        background-image: url(../animations/crossyroad.png);
+        background-position: center;
+    }
+    #breakout:hover{
+        background-size: cover;
+        background-image: url(../animations/breakout.png);
+        background-position: center;
+    }
     #astray:hover{
         background-size: cover;
         background-image: url(../animations/astray.png);
@@ -126,39 +206,14 @@
         background-image: url(../animations/themepark.gif);
         background-position: center;
     }
-    #nisland:hover{
-        background-size: cover;
-        background-image: url(../animations/ninjaisland.gif);
-        background-position: center;
-    }
     #dinogame:hover{
         background-size: cover;
         background-image: url(../animations/Dino.png);
         background-position: center;
     }
-    #candyclicker:hover{
-        background-size: cover;
-        background-image: url(../animations/candyclicker.png);
-        background-position: center;
-    }
     #tunnelrun:hover{
         background-size: cover;
         background-image: url(../animations/tunnelrun.png);
-        background-position: center;
-    }
-    #brawlers:hover{
-        background-size: cover;
-        background-image: url(../animations/brawlers.png);
-        background-position: center;
-    }
-    #smashkarts:hover{
-        background-size: cover;
-        background-image: url(../animations/smashkarts.png);
-        background-position: center;
-    }
-    #amungus:hover{
-        background-size: cover;
-        background-image: url(../animations/amongus.png);
         background-position: center;
     }
     #menu{
@@ -176,15 +231,15 @@
         padding: 50px;
         border-style: solid;
         border-radius: 20px;
+        border-color: white;
         text-align: center;
         vertical-align: center;
-        background-color: #5c5b59;
+        background-color: transparent;
         width: 60px;
-        max-height: 60px;
+        min-height: 60px;
         margin: 10px;
         display: inline-block;
-
-    }
+}
     .icon:hover{
         cursor: pointer;
     }
@@ -244,6 +299,116 @@
 </style>
 <script type="text/javascript">
     var close = 0;
+    function stacktower(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/stacktower/play/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function stack(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/stack/play/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function run3(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/run3/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function racer(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/racer/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function sandgame(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/physicsplayground/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function paperio(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/paperio/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function pacman(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/pacman/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function edgesurf(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/edge-surf/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function crossyroad(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/crossyroad/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function breakout(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/breakout/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
     function astray(){
         const nparent = document.getElementById("nparent");
         const parent = document.getElementById("parent");
@@ -266,99 +431,11 @@
         document.getElementById('x').style.display = "block";
         close = 1;
     }
-    function archer(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "https://playcanv.as/p/JERg21J8/";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
     function spacebuggy(){
         const nparent = document.getElementById("nparent");
         const parent = document.getElementById("parent");
 	    const app = document.getElementById("app");
         app.src = "https://playcanv.as/p/3RerJIcy/";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function robotshooter(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "https://playcanv.as/p/BAuoCOx6/";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function gangdomstyle(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "https://playcanv.as/p/iCL6sxgF/";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function towerclimb(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "Tower_Climb.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function clearg(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "../games/Clear.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function oretycoon(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "../games/ORE Tycoon.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function Cashtycoon(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "../games/Cash Tycoon.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function themetycoon(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "../games/Themetycoon.html";
         app.style.display = "block";
         parent.style.display = "none";
         nparent.style.display = "none";
@@ -376,66 +453,11 @@
         document.getElementById('x').style.display = "block";
         close = 1;
     }
-    function CandyClicker(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "../games/Candy Clicker.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
     function Tunrun(){
         const nparent = document.getElementById("nparent");
         const parent = document.getElementById("parent");
 	    const app = document.getElementById("app");
         app.src = "../games/Tunnel Runner 3D.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function Brawlers(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "../games/Brawl.io.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function smashkarts(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "../games/Smash Karts.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function among(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "Amongus.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        nparent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function Dcity(){
-        const nparent = document.getElementById("nparent");
-        const parent = document.getElementById("parent");
-	    const app = document.getElementById("app");
-        app.src = "https://lo-th.github.io/3d.city/index.html";
         app.style.display = "block";
         parent.style.display = "none";
         nparent.style.display = "none";
@@ -453,97 +475,25 @@
         document.getElementById('x').style.display = "block";
         close = 1;
     }
-    function nseries(){
+    function towerclimb(){
         const nparent = document.getElementById("nparent");
-        nparent.style.display = "contents";
-    }
-    function ninja1(){
-        const parent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
 	    const app = document.getElementById("app");
-        app.src = "../ninja island/1.html";
+        app.src = "../games/Tower_Climb.html";
         app.style.display = "block";
         parent.style.display = "none";
+        nparent.style.display = "none";
         document.getElementById('x').style.display = "block";
         close = 1;
     }
-    function ninja2(){
-        const parent = document.getElementById("nparent");
+    function clearg(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
 	    const app = document.getElementById("app");
-        app.src = "../ninja island/2.html";
+        app.src = "../games/Clear.html";
         app.style.display = "block";
         parent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function ninja3(){
-        const parent = document.getElementById("nparent");
-	    const app = document.getElementById("app");
-        app.src = "../ninja island/3.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function ninja4(){
-        const parent = document.getElementById("nparent");
-	    const app = document.getElementById("app");
-        app.src = "../ninja island/4.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function ninja5(){
-        const parent = document.getElementById("nparent");
-	    const app = document.getElementById("app");
-        app.src = "../ninja island/5.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function ninja6(){
-        const parent = document.getElementById("nparent");
-	    const app = document.getElementById("app");
-        app.src = "../ninja island/6.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function ninja7(){
-        const parent = document.getElementById("nparent");
-	    const app = document.getElementById("app");
-        app.src = "../ninja island/7.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function ninja8(){
-        const parent = document.getElementById("nparent");
-	    const app = document.getElementById("app");
-        app.src = "../ninja island/8.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function ninja9(){
-        const parent = document.getElementById("nparent");
-	    const app = document.getElementById("app");
-        app.src = "../ninja island/9.html";
-        app.style.display = "block";
-        parent.style.display = "none";
-        document.getElementById('x').style.display = "block";
-        close = 1;
-    }
-    function ninja10(){
-        const parent = document.getElementById("nparent");
-	    const app = document.getElementById("app");
-        app.src = "../ninja island/10.html";
-        app.style.display = "block";
-        parent.style.display = "none";
+        nparent.style.display = "none";
         document.getElementById('x').style.display = "block";
         close = 1;
     }

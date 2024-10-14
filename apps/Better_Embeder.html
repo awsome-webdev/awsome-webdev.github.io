@@ -1,0 +1,79 @@
+<html>
+    <title>Math Help</title>
+    <body style="background-color: black;">
+        <center>
+        <h1 style="color: rgb(69, 255, 62);"><u>Unblocker</u></h1>
+        <p id="pele">Open a ABOUT:BLANK with an embed page Inside This Will Show Up in your history as ABOUT:BLANK<br>some pages aren't embedable and wont work!</p>
+        <div class="container"><textarea type="input" class="inbar" placeholder="Past URL with HTTPS or HTTP included" id="input" rows="1">https:\\</textarea><button id="button" class="submit" onclick="embed(document.getElementById('input').value)">GO!</button></div>
+        <h1 style="color: rgb(69, 255, 62);"><u>Youtube Unblocker</u></h1>
+        <div class="container"><textarea class="inbar" id="input2" rows="1" placeholder="Past youtube video link"></textarea><button class="submit" id="button2" onclick="embed2()">GO!</button></div>
+        </center>
+    </body>
+</html>
+<script>
+    function embed(source) {
+        document.getElementById('input').value = "https://";
+        const win = window.open();
+        win.document.body.style.margin = "0";
+        win.document.body.style.height = "100vh";
+        const iframe = win.document.createElement("iframe");
+        iframe.style.border = "none";
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        iframe.style.margin = "0";
+        iframe.referrerpolicy = "no-referrer";
+        iframe.allow = "fullscreen";
+        iframe.src = source;
+        win.document.body.appendChild(iframe);
+      }
+    function embed2(){
+        var inputbar1 = document.getElementById("input2").value;
+        let part1 = inputbar1.slice(0, 24);
+        let part2 = inputbar1.slice(32)
+        const win = window.open();
+        win.document.body.style.margin = "0";
+        win.document.body.style.height = "100vh";
+        const iframe = win.document.createElement("iframe");
+        iframe.style.border = "none";
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        iframe.style.margin = "0";
+        iframe.referrerpolicy = "no-referrer";
+        iframe.allow = "fullscreen";
+        iframe.src = part1 + "embed/" + part2;
+        win.document.body.appendChild(iframe);
+    }
+</script>
+<style>
+    .inbar{
+        padding: 1%;
+        width: 50%;
+        resize: none;
+        margin-left: 43vh;
+    }
+    #pele{
+        font-size: larger;
+        color: rgb(69, 255, 62);
+    }
+    #button{
+        position: static;
+        left: 0%;
+    }
+    #button2{
+        position: static;
+        left: 0%;
+    }
+    .submit{
+        background-color: rgb(108, 108, 108);
+        height: 45px;
+        margin-left: 5px;
+        border-radius: 10px;
+        box-shadow: 1px -2px 0px rgb(255, 255, 255);
+    }
+    .container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+</style>

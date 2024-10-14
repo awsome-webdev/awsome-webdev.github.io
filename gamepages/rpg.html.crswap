@@ -1,0 +1,228 @@
+<html>
+    <body id="body">
+        <button id="x" onclick="closea()">X</button>
+    <div id="parent">
+        <center>
+            <div class="icon" onclick="backcountry()" id="backcountry">
+                <p style="color: white;">Back<br>Country</p>
+            </div>
+            <div class="icon" onclick="bounceback()" id="bounceback">
+                <p style="color: white;">Bounce<br>Back</p>
+            </div>
+            <div class="icon" onclick="frendlyfire()" id="friendlyfire">
+                <p style="color: white;">Friendly<br>Fire</p>
+            </div>
+            <div class="icon" onclick="retrobowl()" id="retrobowl">
+                <p style="color: white;">Retro<br>Bowl</p>
+            </div>
+            <div class="icon" onclick="ironsnout()" id="ironsnout">
+                <p style="color: white;">Iron<br>Snout</p>
+            </div>
+     </center>
+    </body>
+    <iframe id="app">
+            
+    </iframe>
+</html>
+<style>
+    #ironsnout:hover{
+        background-size: cover;
+        background-image: url(../animations/ironsnout.png);
+        background-position: center;
+    }
+    #retrobowl:hover{
+        background-size: cover;
+        background-image: url(../animations/retrobowl.png);
+        background-position: center;
+    }
+    #friendlyfire:hover{
+        background-size: cover;
+        background-image: url(../animations/friendlyfire.png);
+        background-position: center;
+    }
+    #bounceback:hover{
+        background-size: cover;
+        background-image: url(../animations/bounceback.png);
+        background-position: center;
+    }
+    #backcountry:hover{
+        background-size: cover;
+        background-image: url(../animations/backcountry.png);
+        background-position: center;
+    }
+    .sideicon{
+        position: relative;
+        border-radius: 20px;
+        width: 90%;
+        height: 30px;
+        background-color: #5c5b59;
+        text-align: center;
+        padding: 10px;
+        margin: 5px;
+    }
+    .sideicon:hover{
+        cursor: pointer;
+    }
+    #sidebar{
+        border-style: solid;
+        border-color: white;
+        position: absolute;
+        right: 0px;
+        width: 33%;
+        min-height: 100%;
+    }
+    #menu{
+        display: none;
+        position: absolute;
+        width: 50%;
+        height: 70%;
+        left: 25%;
+    }
+    #body{
+        background-color: black;
+    }
+    .icon{
+        position: relative;
+        padding: 50px;
+        border-style: solid;
+        border-radius: 20px;
+        text-align: center;
+        vertical-align: center;
+        background-color: #5c5b59;
+        width: 60px;
+        max-height: 60px;
+        margin: 10px;
+        display: inline-block;
+
+    }
+    .icon:hover{
+        cursor: pointer;
+    }
+    .subicon{
+        position: relative;
+        z-index: 2;
+        padding: 30px;
+        border-style: solid;
+        border-radius: 20px;
+        text-align: center;
+        background-color: #5c5b59;
+        width: 50%;
+        margin: auto; 
+    }
+    .subicons:hover{
+        cursor: pointer;
+    }
+    #nparent{
+        display: none;
+    }
+    #x{
+	    position: absolute;
+        border-radius: 200px;
+        top: 0px;
+        left: 98.5%;
+        z-index: 2;
+    }
+    #app{
+        position: absolute;
+        top: 0%;
+        left: 0%;
+	    width: 100%;
+        height: 100%;
+        display: none;
+        border-color: white;
+        background-color: black;
+   }
+   .nbutton{
+        display: none;
+        padding: 30px;
+        border-style: solid;
+        border-radius: 20px;
+        text-align: center;
+        background-color: #5c5b59;
+        width: 60px;
+        margin: 10px;
+   }
+   /* Hide horizontal scrollbar */
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide vertical scrollbar */
+    body {
+        overflow: hidden;
+    }
+</style>
+<script type="text/javascript">
+    var close = 0;
+    function ironsnout(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../games/Iron snout/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function retrobowl(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/retrobowl/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function frendlyfire(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/friendlyfire/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function backcountry(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/backcountry/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function bounceback(){
+        const nparent = document.getElementById("nparent");
+        const parent = document.getElementById("parent");
+	    const app = document.getElementById("app");
+        app.src = "../gamepages/htmlgames/html5/bounceback/index.html";
+        app.style.display = "block";
+        parent.style.display = "none";
+        nparent.style.display = "none";
+        document.getElementById('x').style.display = "block";
+        close = 1;
+    }
+    function closea(){
+        if (close == 1) {
+            const parent = document.getElementById("parent");
+	        const app = document.getElementById("app");
+            app.style.display = "none";
+            parent.style.display = "block";
+            app.src = "";
+        }
+        if (close == 0){
+            location.href = "../apps/games.ui.html";
+        }
+        close = 0;
+    }
+</script>
+<script id="sidebar2">
+
+</script>

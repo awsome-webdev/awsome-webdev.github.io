@@ -1,0 +1,28 @@
+#tlk{
+    position: relative;
+    height: 75vh;
+    width: 100%;
+    background-color: white;
+    overflow-y: scroll;
+    top: 5vh;
+    display: none;
+    bottom: 0px;
+}
+#buttonexchat{
+    border-radius: 5px;
+    background-color: #5c5b59;
+    box-shadow: 2px 3px 0px rgb(255, 255, 255);
+}
+#toydefense{
+    background-size: cover;
+    background-image: url(animations/toydefense.png);
+    background-position: center;
+}
+#popupclose{
+    border-style: solid;
+    border-color: white;
+    background-color: transparent;
+    color: white;
+    margin: 4px;
+    border-radius: 10px;
+}

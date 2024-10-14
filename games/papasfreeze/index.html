@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruffle on Vercel</title>
+    <!-- Ruffle CDN Script -->
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const ruffle = window.RufflePlayer.newest();
+            const embeds = document.querySelectorAll("embed");
+            embeds.forEach(embed => ruffle.createPlayer().load(embed));
+        });
+    </script>
+</head>
+<body>
+    <div style="position: absolute; width: 100vw; height: 100vh;">
+        <!-- Larger dimensions for the game -->
+        <embed src="papasfreezeria.swf" width="100%" height="100%">
+        <!-- Fallback for browsers that don't support the embed or Ruffle -->
+    </div>
+</body>
+</html>
