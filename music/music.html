@@ -16,6 +16,9 @@
         <h3 id="songartist" class="text"></h3>
         <h4 id="songalbum" class="text"></h4>
         </center>
+        <div id="list-shit">
+
+        </div>
     </div>
     <div id="bottombar">
         <center>
@@ -8719,6 +8722,13 @@
         left: 70%;
         top: 1.5vw;
     }
+    #list-shit{
+        position: relative;
+        width: 100%;
+        height: 65%;
+        margin-top: 10px;
+        display: none;
+    }
     @keyframes ani {
         from{
             transform: scale(1);
@@ -8780,8 +8790,15 @@ audio.addEventListener('loadeddata', () => {
             console.log(queue[0])
             src.setAttribute('src', queue[0])
             audio.load()
+            const ele = document.querySelector('[attributeName="'+ queue[0] + '"]');
             queue.shift()
             console.log(queue[0])
+            const songtitle = ele.getAttribute('title');
+            const songartist = ele.getAttribute('artist');
+            const songalbum = ele.getAttribute('album');
+            document.getElementById('songtitle').textContent = songtitle
+            document.getElementById('songartist').textContent = songartist
+            document.getElementById('songalbum').textContent = songalbum
     }
     function queue1(event){
         const div = event.target.parentNode
