@@ -8790,7 +8790,8 @@ audio.addEventListener('loadeddata', () => {
             console.log(queue[0])
             src.setAttribute('src', queue[0])
             audio.load()
-            const ele = document.querySelector('[attributeName="'+ queue[0] + '"]');
+            const ele = document.querySelector('div[src="' + queue[0] + '"]');
+            console.log(ele)
             queue.shift()
             console.log(queue[0])
             const songtitle = ele.getAttribute('title');
@@ -8799,6 +8800,7 @@ audio.addEventListener('loadeddata', () => {
             document.getElementById('songtitle').textContent = songtitle
             document.getElementById('songartist').textContent = songartist
             document.getElementById('songalbum').textContent = songalbum
+        
     }
     function queue1(event){
         const div = event.target.parentNode
