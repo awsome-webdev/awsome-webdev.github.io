@@ -1,10 +1,12 @@
 <html>
-    <header>
+    <head>
         <meta name="description" content="Your plave for unblocked games and apps, hacks coming soon">
         <link href="bookmark.css" rel="stylesheet" type="text/css">
         <link href="Scripts/normalstyles.css" rel="stylesheet" type="text/css">
         <title>Games</title>
         <link rel="icon" type="image/x-icon" href="ICON.ico">
+    </head>
+    <script src="index.js"></script>
         <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-57MKGYVS7K"></script>
 <script>
@@ -14,24 +16,17 @@
 
   gtag('config', 'G-57MKGYVS7K');
 </script>
-        <!-- Matomo -->
-    <script>
-        var _paq = window._paq = window._paq || [];
-        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-          var u="https://githuba.matomo.cloud/";
-          _paq.push(['setTrackerUrl', u+'matomo.php']);
-          _paq.push(['setSiteId', '1']);
-          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-          g.async=true; g.src='https://cdn.matomo.cloud/githuba.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-        })();
-        </script>
-      <!-- End Matomo Code -->
     </header>
     <body id="body">
-        <button id="x" onclick="closea2()">X</button>
+        <button id="x" onclick="closea()">X</button>
+        <div id="bookmarksdiv">
+            <div>
+                <p id="bookmarkp">Bookmarked<br>Games</p>
+            </div>
+            <div id="bookicon">
+                
+            </div>
+        </div>
         <div id="popupdiv">
             <button onclick="closediv()" id="popupclose">X</button>
             <iframe src="news.html" id="newsframe">
@@ -39,279 +34,317 @@
             </iframe>
         </div>
         <iframe id="app"></iframe>
-    <div id="parent2">
+        <button id="expandtlk2" onclick="showgamechat()">><br>><br>><br>><br>><br>></button>
+        <div id="tlk2">
+            <div id="tlkio" data-channel="bettergames" data-theme="theme--day" style="width:100%;height:100%;"></div><script async src="https://tlk.io/embed.js" type="text/javascript"></script>
+        </div>
+    <div id="parent">
             <textarea id="sbar" rows="1" placeholder="Search..."></textarea>
         <div id="search result">
 
         </div>
-        <div class="icon2" onclick="awesometanks()" id="awesometanks">
+        <!--need pics for pizzeria and territorial-->
+        <div class="icon" onclick="papasfreeze()" id="papasfreeze">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('papasfreeze');"></span>
+            <p style="color: white;">Papas<br>Freezeria</p>
+        </div>
+        <div class="icon" onclick="popp()" id="popp">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('popp');"></span>
+            <p style="color: white;">Papas<br>Pizzeria</p>
+        </div>
+        <div class="icon" onclick="teritory()" id="teritory">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('teritory');"></span>
+            <p style="color: white;">Teritorial<br>IO</p>
+        </div>
+        <div class="icon" onclick="mc18()" id="mc18">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('mc18');"></span>
+            <p style="color: white;">Minecraft<br>yaa...</p>
+        </div>
+        <div class="icon" onclick="awesometanks()" id="awesometanks">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('awesometanks');"></span>
             <p style="color: white;">Awesome<br>Tanks 2</p>
         </div>
-        <div class="icon2" onclick="toydefense()" id="toydefense">
+        <div class="icon" onclick="toydefense()" id="toydefense">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('toydefense');"></span>
             <p style="color: white;">Toy<br>Defense</p>
         </div>
-        <div class="icon2" onclick="blockparkour()" id="blockparkour">
+        <div class="icon" onclick="blockparkour()" id="blockparkour">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('blockparkour');"></span>
             <p style="color: white;">Block<br>Parkour3d</p>
         </div>
-        <div class="icon2" onclick="ironsnout()" id="ironsnout">
+        <div class="icon" onclick="ironsnout()" id="ironsnout">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('ironsnout');"></span>
             <p style="color: white;">Iron<br>Snout</p>
           </div>
-        <div class="icon2" onclick="archer()" id="archer">
+        <div class="icon" onclick="archer()" id="archer">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('archer');"></span>
             <p style="color: white;">Archer<br>Game</p>
         </div>
-        <div class="icon2" onclick="spacebuggy()" id="spacebuggy">
+        <div class="icon" onclick="spacebuggy()" id="spacebuggy">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('spacebuggy')"></span>
             <p style="color: white;">Space<br>Buggy</p>
         </div>
-        <div class="icon2" onclick="robotshooter()" id="robots">
+        <div class="icon" onclick="robotshooter()" id="robots">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('robots');"></span>
             <p style="color: white;">Robot<br>Shooter</p>
         </div>
-        <div class="icon2" onclick="gangdomstyle()" id="gangdomstyle">
+        <div class="icon" onclick="gangdomstyle()" id="gangdomstyle">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('gangdomstyle');"></span>
            <p style="color: white;">Gangdomm<br>Style</p>
         </div>
-        <div class="icon2" onclick="towerclimb()" id="towerclimb">
+        <div class="icon" onclick="towerclimb()" id="towerclimb">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('towerclimb');"></span>
             <p style="color: white;">Tower<br>Climb</p>
         </div>
-        <div class="icon2" onclick="clearg()" id="clear">
+        <div class="icon" onclick="clearg()" id="clear">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('clear');"></span>
             <p style="color: white;">Clear<br>Game</p>
         </div>
-        <div class="icon2" onclick="oretycoon()" id="oretycoon">
+        <div class="icon" onclick="oretycoon()" id="oretycoon">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('oretycoon');"></span>
             <p style="color: white;">Ore<br>Tycoon</p>
         </div>
-        <div class="icon2" onclick="Cashtycoon()" id="cashtycoon">
+        <div class="icon" onclick="Cashtycoon()" id="cashtycoon">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('cashtycoon');"></span>
             <p style="color: white;">Cash<br>Tycoon</p>   
         </div>
-        <div class="icon2" onclick="themetycoon()" id="theme">
+        <div class="icon" onclick="themetycoon()" id="theme">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('ironsnout');"></span>
             <p style="color: white;">Park<br>Tycoon</p>   
         </div>
-        <div class="icon2" onclick="dinogame()" id="dinogame">
+        <div class="icon" onclick="dinogame()" id="dinogame">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('dinogame');"></span>
             <p style="color: white;">Dino<br>Game</p>
         </div>
-        <div class="icon2" onclick="CandyClicker()" id="candyclicker">
+        <div class="icon" onclick="CandyClicker()" id="candyclicker">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('candyclicker');"></span>
             <p style="color: white;">Candy Clicker</p>
         </div>
-        <div class="icon2" onclick="nseries()" id="nisland">
+        <div class="icon" onclick="nseries()" id="nisland">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('nisland');"></span>
             <p style="color: white;">Ninja<br>island</p>
         </div>
-        <div class="icon2" onclick="Tunrun()" id="tunnelrun">
+        <div class="icon" onclick="Tunrun()" id="tunnelrun">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('tunnelrun');"></span>
             <p style="color: white;">Tunnel<br>Run</p>
         </div>
-        <div class="icon2" onclick="Brawlers()" id="brawlers">
+        <div class="icon" onclick="Brawlers()" id="brawlers">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('brawlers');"></span>
             <p style="color: white;">Brawlers<br>Mutliplayer</p>
         </div>
-        <div class="icon2" onclick="smashkarts()" id="smashkarts">
+        <div class="icon" onclick="smashkarts()" id="smashkarts">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('smashkarts');"></span>
             <p style="color: white;">Smash Karts</p>
         </div>
-        <div class="icon2" onclick="among()" id="amungus">
+        <div class="icon" onclick="among()" id="amungus">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('amungus');"></span>
             <p style="color: white;">Amongus Unblocked</p>
         </div>
-        <div class="icon2" onclick="Dcity()" id="dcity">
+        <div class="icon" onclick="Dcity()" id="dcity">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('dcity');"></span>
             <p style="color: white;">City<br>Builder</p>
         </div>
-        <div class="icon2" onclick="flappy()" id="flappy">
+        <div class="icon" onclick="flappy()" id="flappy">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('flappy');"></span>
             <p style="color: white;">Flappy Bird</p>
         </div>
-        <div class="icon2" onclick="robotag()" id="robotag">
+        <div class="icon" onclick="robotag()" id="robotag">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('robotag');"></span>
             <p style="color: white;">Robot<br>Tag</p>
         </div>
-        <div class="icon2" onclick="fortyeight()" id="fortyeight">
+        <div class="icon" onclick="fortyeight()" id="fortyeight">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('fortyeight');"></span>
             <p style="color: white;">20<br>48</p>
         </div>
-        <div class="icon2" onclick="artspace()" id="artspace">
+        <div class="icon" onclick="artspace()" id="artspace">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('artspace');"></span>
             <p style="color: white;">Ascii<br>Space</p>
         </div>
-        <div class="icon2" onclick="astray()" id="astray">
+        <div class="icon" onclick="astray()" id="astray">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('astray');"></span>
             <p style="color: white;">Astray<br>Maze</p>
         </div>
-        <div class="icon2" onclick="backcountry()" id="backcountry">
+        <div class="icon" onclick="backcountry()" id="backcountry">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('backcountry');"></span>
             <p style="color: white;">Back<br>Country</p>
         </div>
-        <div class="icon2" onclick="basketballstars()" id="basketballstars">
+        <div class="icon" onclick="basketballstars()" id="basketballstars">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('basketballstars');"></span>
             <p style="color: white;">Basketball<br>Stars</p>
         </div>
-        <div class="icon2" onclick="blackholesquare()" id="blackholesquare">
+        <div class="icon" onclick="blackholesquare()" id="blackholesquare">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('blackholesquare');"></span>
             <p style="color: white;">Blackhole<br>Square</p>
         </div>
-        <div class="icon2" onclick="bounceback()" id="bounceback">
+        <div class="icon" onclick="bounceback()" id="bounceback">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('bounceback');"></span>
             <p style="color: white;">Bounce<br>Back</p>
         </div>
-        <div class="icon2" onclick="breakout()" id="breakout">
+        <div class="icon" onclick="breakout()" id="breakout">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('breakout');"></span>
             <p style="color: white;">ATARI<br>BREAKOUT</p>
         </div>
-        <div class="icon2" onclick="chess()" id="chess">
+        <div class="icon" onclick="chess()" id="chess">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('chess');"></span>
             <p style="color: white;">Singleplayer<br>Chess</p>
         </div>
-        <div class="icon2" onclick="cookieclicker()" id="cookieclicker">
+        <div class="icon" onclick="cookieclicker()" id="cookieclicker">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('cookieclicker');"></span>
             <p style="color: white;">Cookie<br>Clicker</p>
         </div>
-        <div class="icon2" onclick="crossyroad()" id="crossyroad">
+        <div class="icon" onclick="crossyroad()" id="crossyroad">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('crossyroad');"></span>
             <p style="color: white;">Crossy<br>Road</p>
         </div>
-        <div class="icon2" onclick="dogeminer()" id="dogeminer">
+        <div class="icon" onclick="dogeminer()" id="dogeminer">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('dogeminer');"></span>
             <p style="color: white;">Doge<br>Miner</p>
         </div>
-        <div class="icon2" onclick="ducklife()" id="ducklife">
+        <div class="icon" onclick="ducklife()" id="ducklife">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('ducklife');"></span>
             <p style="color: white;">Duck<br>Life</p>
         </div>
-        <div class="icon2" onclick="ducklife2()" id="ducklife">
+        <div class="icon" onclick="ducklife2()" id="ducklife">
             <p style="color: white;">Duck<br>Life2</p>
         </div>
-        <div class="icon2" onclick="ducklife3()" id="ducklife">
+        <div class="icon" onclick="ducklife3()" id="ducklife">
             <p style="color: white;">Duck<br>Life3</p>
         </div>
-        <div class="icon2" onclick="ducklife4()" id="ducklife">
+        <div class="icon" onclick="ducklife4()" id="ducklife">
             <p style="color: white;">Duck<br>Life4</p>
         </div>
-        <div class="icon2" onclick="ducklife5()" id="ducklife">
+        <div class="icon" onclick="ducklife5()" id="ducklife">
             <p style="color: white;">Duck<br>Life5</p>
         </div>
-        <div class="icon2" onclick="edgesurf()" id="edgesurf">
+        <div class="icon" onclick="edgesurf()" id="edgesurf">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('edgesurf');"></span>
             <p style="color: white;">Edge<br>Surf</p>
         </div>
-        <div class="icon2" onclick="elasticmorty()" id="elasticmorty">
+        <div class="icon" onclick="elasticmorty()" id="elasticmorty">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('elasticmorty');"></span>
             <p style="color: white;">Elastic<br>Morty</p>
         </div>
-        <div class="icon2" onclick="evilglitch()" id="evilglitch">
+        <div class="icon" onclick="evilglitch()" id="evilglitch">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('evilglitch');"></span>
             <p style="color: white;">Evil<br>Glitch</p>
         </div>
-        <div class="icon2" onclick="fireboyandwatergirl()" id="fireboyandwatergirl">
+        <div class="icon" onclick="fireboyandwatergirl()" id="fireboyandwatergirl">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('fireboyandwatergirl');"></span>
             <p style="color: white;">Fireboy<br>Watergirl1</p>
         </div>
-        <div class="icon2" onclick="fireboyandwatergirl2()" id="fireboyandwatergirl">
+        <div class="icon" onclick="fireboyandwatergirl2()" id="fireboyandwatergirl">
             <p style="color: white;">Fireboy<br>Watergirl2</p>
         </div>
-        <div class="icon2" onclick="fireboyandwatergirl3()" id="fireboyandwatergirl">
+        <div class="icon" onclick="fireboyandwatergirl3()" id="fireboyandwatergirl">
             <p style="color: white;">Fireboy<br>Watergirl3</p>
         </div>
-        <div class="icon2" onclick="fireboyandwatergirl4()" id="fireboyandwatergirl">
+        <div class="icon" onclick="fireboyandwatergirl4()" id="fireboyandwatergirl">
             <p style="color: white;">Fireboy<br>Watergirl4</p>
         </div>
-        <div class="icon2" onclick="frendlyfire()" id="friendlyfire">
+        <div class="icon" onclick="frendlyfire()" id="friendlyfire">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('frendlyfire');"></span>
             <p style="color: white;">Friendly<br>Fire</p>
         </div>
-        <div class="icon2" onclick="geometrydash()" id="geometrydash">
+        <div class="icon" onclick="geometrydash()" id="geometrydash">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('geometrydash');"></span>
             <p style="color: white;">Geometry<br>Dash</p>
         </div>
-        <div class="icon2" onclick="motoxm()" id="motoxm">
+        <div class="icon" onclick="motoxm()" id="motoxm">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('motoxm');"></span>
             <p style="color: white;">Moto<br>3XM</p>
         </div>
-        <div class="icon2" onclick="ninjaevilcorp()" id="ninjaevilcorp">
+        <div class="icon" onclick="ninjaevilcorp()" id="ninjaevilcorp">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('ninjaevilcorp');"></span>
             <p style="color: white;">Ninja<br>EvilCorp</p>
         </div>
-        <div class="icon2" onclick="pacman()" id="pacman">
+        <div class="icon" onclick="pacman()" id="pacman">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('pacman');"></span>
             <p style="color: white;">HTML<br>Pacman</p>
         </div>
-        <div class="icon2" onclick="paperio()" id="paperio">
+        <div class="icon" onclick="paperio()" id="paperio">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('paperio');"></span>
             <p style="color: white;">Paper<br>IO</p>
         </div>
-        <div class="icon2" onclick="sandgame()" id="sandgame">
+        <div class="icon" onclick="sandgame()" id="sandgame">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('sandgame');"></span>
             <p style="color: white;">Sand<br>Game</p>
         </div>
-        <div class="icon2" onclick="pushback()" id="pushback">
+        <div class="icon" onclick="pushback()" id="pushback">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('pushback');"></span>
             <p style="color: white;">Push<br>Back</p>
         </div>
-        <div class="icon2" onclick="q1()" id="q1">
+        <div class="icon" onclick="q1()" id="q1">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('sandgame');"></span>
             <p style="color: white;">q1k3<br>(shooter)</p>
         </div>
-        <div class="icon2" onclick="racer()" id="racer">
+        <div class="icon" onclick="racer()" id="racer">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('racer');"></span>
             <p style="color: white;">Pixle<br>Racer</p>
         </div>
-        <div class="icon2" onclick="retrobowl()" id="retrobowl">
+        <div class="icon" onclick="retrobowl()" id="retrobowl">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('retrobowl');"></span>
             <p style="color: white;">Retro<br>Bowl</p>
         </div>
-        <div class="icon2" onclick="rooftopsniper()" id="rooftopsniper">
+        <div class="icon" onclick="rooftopsniper()" id="rooftopsniper">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('rooftopsniper');"></span>
             <p style="color: white;">RoofTop<br>Sniper</p>
         </div>
-        <div class="icon2" onclick="run3()" id="run3">
+        <div class="icon" onclick="run3()" id="run3">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('run3');"></span>
             <p style="color: white;">Run<br>3</p>
         </div>
-        <div class="icon2" onclick="stack()" id="stack">
+        <div class="icon" onclick="stack()" id="stack">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('stack');"></span>
             <p style="color: white;">Stack<br>Game</p>
         </div>
-        <div class="icon2" onclick="stacktower()" id="stacktower">
+        <div class="icon" onclick="stacktower()" id="stacktower">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('stacktower');"></span>
             <p style="color: white;">Stack<br>Tower</p>
         </div>
-        <div class="icon2" onclick="underrun()" id="underrun">
+        <div class="icon" onclick="underrun()" id="underrun">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('underrun');"></span>
             <p style="color: white;">Under<br>Run</p>
         </div>
-        <div class="icon2" onclick="vex3()" id="vex">
+        <div class="icon" onclick="vex3()" id="vex">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('vex');"></span>
             <p style="color: white;">vex<br>3</p>
         </div>
-        <div class="icon2" onclick="vex4()" id="vex">
+        <div class="icon" onclick="vex4()" id="vex">
             <p style="color: white;">vex<br>4</p>
         </div>
-        <div class="icon2" onclick="vex5()" id="vex">
+        <div class="icon" onclick="vex5()" id="vex">
             <p style="color: white;">vex<br>5</p>
         </div>
-        <div class="icon2" onclick="vex6()" id="vex">
+        <div class="icon" onclick="vex6()" id="vex">
             <p style="color: white;">vex<br>6</p>
         </div>
-        <div class="icon2" onclick="retro()" id="retro">
+        <div class="icon" onclick="retro()" id="retro">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('retro');"></span>
             <p style="color: white;">Web<br>Retro</p>
         </div>
-        <div class="icon2" onclick="agewar()" id="agewar">
+        <div class="icon" onclick="agewar()" id="agewar">
             <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('agewar');"></span>
             <p style="color: white;">Age<br>Of War</p>
         </div>
     </div>
     </body>
+    <div id="sidebar">
+        <center>
+            <h1 style="color: white;">Recources/Catagories</h1> <button id="buttonexchat" onclick="exchat()">Expand Chat</button> 
+        <div id="sidebarbuttons">
+        <div class="sideicon" onclick="location.href = '/movies'">
+           <p style="color: white;">Movies</p>
+        </div>
+        <div class="sideicon" onclick="location.href = ' gamepages/retro.html'">
+           <p style="color: white;">Don't Know How To Use Webretro?</p>
+        </div>
+        <div class="sideicon" onclick="location.href = 'apps/ui.html'">
+            <p style="color: white;">Apps</p>
+         </div>
+         <div class="sideicon" onclick="location.href = 'apps/mc_servers.html'">
+            <p style="color: white;">Mc servers</p>
+         </div>
+        </div>
         </center>
         <div id="tlk">
             <div id="tlkio" data-channel="bettergames" data-theme="theme--day" style="width:100%;height:100%;"></div><script async src="https://tlk.io/embed.js" type="text/javascript"></script>
@@ -360,7 +393,6 @@
 </style>
 <script src="newgames/scripts/games.js"></script>
 <script src="Scripts/Games.js"></script>
-<script src="Scripts/eastereggs.js"></script>
 <script src="Scripts/popupdiv.js"></script>
 <script src="Scripts/Bookmark.js"></script>
 <script src="Scripts/lightanddark.js"></script>
@@ -419,6 +451,11 @@
     #awesometanks:hover{
         background-size: cover;
         background-image: url(animations/awesometanks.png);
+        background-position: center;
+    }
+    #mc18:hover{
+        background-size: cover;
+        background-image: url(animations/mc18.png);
         background-position: center;
     }
     #toydefense:hover{
@@ -528,6 +565,11 @@
         background-image: url( animations/flappybird.png);
         background-position: center;
     }
+    #popp:hover{
+        background-size: cover;
+        background-image: url( animations/popp.png);
+        background-position: center;
+    }
     #robotag:hover{
         background-size: cover;
         background-image: url( animations/rtag.png);
@@ -571,8 +613,7 @@
         z-index: 2;
     }
     #app{
-        position: relative;
-        z-index: 1;
+        position: absolute;
         top: 0%;
         left: 0%;
 	    width: 100%;
