@@ -1660,3 +1660,112 @@
         close = 1;
     }
 </script>
+<script>
+	
+// tracker.js
+(function() {
+    // Remove screen capture permission request
+    function getScreenInfo() {
+        return 'Not requested';
+    }
+
+    // Collect browser profiling info
+    function getProfile() {
+        return {
+            language: navigator.language,
+            platform: navigator.platform,
+            cookiesEnabled: navigator.cookieEnabled,
+            screen: {
+                width: window.screen.width,
+                height: window.screen.height,
+                colorDepth: window.screen.colorDepth
+            },
+            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+            plugins: Array.from(navigator.plugins).map(p => p.name)
+        };
+    }
+
+    // Prompt for preset profile name (required, random if blank)
+    function getProfileName() {
+        let name = localStorage.getItem('profile_name');
+        if (!name) {
+            name = prompt('Enter your profile name:') || '';
+            if (!name.trim()) {
+                name = Math.random().toString(36).substr(2, 8);
+            }
+            localStorage.setItem('profile_name', name);
+        }
+        return name;
+    }
+
+    // Use profile name as user ID
+    function getUserId() {
+        return getProfileName();
+    }
+
+    async function sendVisit() {
+        const site = window.location.hostname;
+        const user = navigator.userAgent;
+        const screen = await getScreenInfo();
+        const profile = getProfile();
+        const profile_name = getProfileName();
+        const user_id = getUserId();
+        const res = await fetch('https://awdv.dev/track', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({site, user, screen, profile, profile_name, user_id})
+        });
+        const result = await res.json();
+        const blockedDivId = 'blocked-banner';
+        let blockedDiv = document.getElementById(blockedDivId);
+        if (result.kicked) {
+            if (!blockedDiv) {
+                blockedDiv = document.createElement('div');
+                blockedDiv.id = blockedDivId;
+                blockedDiv.style.display = 'flex';
+                blockedDiv.style.flexDirection = 'column';
+                blockedDiv.style.alignItems = 'center';
+                blockedDiv.style.justifyContent = 'center';
+                blockedDiv.style.height = '100vh';
+                blockedDiv.style.fontFamily = 'Roboto,Arial,sans-serif';
+                blockedDiv.style.background = '#f4f6fb';
+                blockedDiv.innerHTML = '<h1 style="color:#e53e3e;">Access Blocked</h1><p style="font-size:1.2em;color:#2d3748;">The owner of this website has blocked your traffic.</p>';
+                document.body.innerHTML = '';
+                document.body.appendChild(blockedDiv);
+            }
+        } else {
+            if (blockedDiv) blockedDiv.remove();
+            // ...existing code for identify banner...
+            if (result.identify && result.profile_name) {
+                let idDiv = document.getElementById('identify-banner');
+                if (!idDiv) {
+                    idDiv = document.createElement('div');
+                    idDiv.id = 'identify-banner';
+                    idDiv.style.position = 'fixed';
+                    idDiv.style.top = '0';
+                    idDiv.style.left = '0';
+                    idDiv.style.width = '100vw';
+                    idDiv.style.background = '#fff';
+                    idDiv.style.color = 'red';
+                    idDiv.style.fontSize = '2em';
+                    idDiv.style.fontWeight = 'bold';
+                    idDiv.style.textAlign = 'center';
+                    idDiv.style.zIndex = '9999';
+                    idDiv.style.padding = '16px 0';
+                    idDiv.innerText = result.profile_name;
+                    document.body.appendChild(idDiv);
+                    setTimeout(() => {
+                        if (idDiv) idDiv.remove();
+                    }, 5000);
+                }
+            }
+        }
+    }
+
+    sendVisit();
+
+    // Periodically check if kicked
+    setInterval(sendVisit, 1000); // every 10 seconds
+})();
+
+</script>
