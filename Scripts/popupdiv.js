@@ -9,6 +9,6 @@ function closediv() {
     const div = document.getElementById('popupdiv');
     div.style.display = 'none';
     div.setAttribute('src', '')
-    localStorage.setItem('gamespopupnews', 1);
+    localStorage.setItem('gamespopupnews', 0);
     console.log('closed');
   }
