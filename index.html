@@ -1,20 +1,850 @@
 <html>
-    <button onclick="embed(`${window.location.origin}/app.html`);console.log(window.location)">Click ME</button>
+    <head>
+        <meta name="description" content="Your place for unblocked games and apps, hacks coming soon">
+        <link href="bookmark.css" rel="stylesheet" type="text/css">
+        <link href="Scripts/normalstyles.css" rel="stylesheet" type="text/css">
+        <title>Games</title>
+        <link rel="icon" type="image/x-icon" href="ICON.ico">
+    </head>
+    <script src="index.js"></script>
+    </header>
+    <body id="body">
+        <button id="x" onclick="closea()">X</button>
+        <div id="bookmarksdiv">
+            <div>
+                <p id="bookmarkp">Bookmarked<br>Games</p>
+            </div>
+            <div id="bookicon">
+                
+            </div>
+        </div>
+        <div id="popupdiv">
+            <button onclick="closediv()" id="popupclose">X</button>
+            <iframe src="news.html" id="newsframe">
+
+            </iframe>
+        </div>
+        <iframe id="app"></iframe>
+        <button id="expandtlk2" onclick="showgamechat()">><br>><br>><br>><br>><br>></button>
+        <div id="tlk2">
+            <div id="tlkio" data-channel="bettergames" data-theme="theme--day" style="width:100%;height:100%;"></div><script async src="https://tlk.io/embed.js" type="text/javascript"></script>
+        </div>
+    <div id="parent">
+            <textarea id="sbar" rows="1" placeholder="Search..."></textarea>
+        <div id="search result">
+
+        </div>
+        <div class="icon" onclick="opengame(' games/papasfreezeria.html')" id="papasfreeze">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('papasfreeze');"></span>
+            <p style="color: white;">Papas<br>Freezeria</p>
+        </div>
+        <div class="icon" onclick="opengame(' games/papaspizzeria.html')"  id="popp">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('popp');"></span>
+            <p style="color: white;">Papas<br>Pizzeria</p>
+        </div>
+        <div class="icon" onclick="opengame(' games/territorialio.html')" id="teritory">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('teritory');"></span>
+            <p style="color: white;">Teritorial<br>IO</p>
+        </div>
+        <div class="icon" onclick="opengame(' games/mc18.html')" id="mc18">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('mc18');"></span>
+            <p style="color: white;">Minecraft<br>yaa...</p>
+        </div>
+        <div class="icon" onclick="opengame('https://playcanv.as/p/JERg21J8/')" id="awesometanks">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('awesometanks');"></span>
+            <p style="color: white;">Awesome<br>Tanks 2</p>
+        </div>
+        <div class="icon" onclick="opengame(' games/toydefense.html')" id="toydefense">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('toydefense');"></span>
+            <p style="color: white;">Toy<br>Defense</p>
+        </div>
+        <div class="icon" onclick="opengame(' games/parkour-block-3d-main/index.html')" id="blockparkour">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('blockparkour');"></span>
+            <p style="color: white;">Block<br>Parkour3d</p>
+        </div>
+        <div class="icon" onclick="opengame(' games/Iron snout/index.html')" id="ironsnout">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('ironsnout');"></span>
+            <p style="color: white;">Iron<br>Snout</p>
+          </div>
+        <div class="icon" onclick="opengame('https://playcanv.as/p/JERg21J8/')" id="archer">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('archer');"></span>
+            <p style="color: white;">Archer<br>Game</p>
+        </div>
+        <div class="icon" onclick="opengame('https://playcanv.as/p/3RerJIcy/')" id="spacebuggy">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('spacebuggy')"></span>
+            <p style="color: white;">Space<br>Buggy</p>
+        </div>
+        <div class="icon" onclick="opengame('https://playcanv.as/p/BAuoCOx6/')" id="robots">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('robots');"></span>
+            <p style="color: white;">Robot<br>Shooter</p>
+        </div>
+        <div class="icon" onclick="opengame('https://playcanv.as/p/iCL6sxgF/')" id="gangdomstyle">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('gangdomstyle');"></span>
+           <p style="color: white;">Gangdomm<br>Style</p>
+        </div>
+        <div class="icon" onclick="opengame(' games/Tower_Climb.html')" id="towerclimb">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('towerclimb');"></span>
+            <p style="color: white;">Tower<br>Climb</p>
+        </div>
+        <div class="icon" onclick="opengame(' games/Clear.html')" id="clear">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('clear');"></span>
+            <p style="color: white;">Clear<br>Game</p>
+        </div>
+        <div class="icon" onclick="opengame(' games/ORE Tycoon.html')" id="oretycoon">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('oretycoon');"></span>
+            <p style="color: white;">Ore<br>Tycoon</p>
+        </div>
+        <div class="icon" onclick="opengame(' games/Cash Tycoon.html')" id="cashtycoon">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('cashtycoon');"></span>
+            <p style="color: white;">Cash<br>Tycoon</p>   
+        </div>
+        <div class="icon" onclick="opengame(' games/Themetycoon.html')" id="theme">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('theme');"></span>
+            <p style="color: white;">Park<br>Tycoon</p>   
+        </div>
+        <div class="icon" onclick="opengame(' games/dinogame.html')" id="dinogame">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('dinogame');"></span>
+            <p style="color: white;">Dino<br>Game</p>
+        </div>
+        <div class="icon" onclick="opengame(' games/Candy Clicker.html')" id="candyclicker">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('candyclicker');"></span>
+            <p style="color: white;">Candy Clicker</p>
+        </div>
+        <div class="icon" onclick="nseries()" id="nisland">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('nisland');"></span>
+            <p style="color: white;">Ninja<br>island</p>
+        </div>
+        <div class="icon" onclick="opengame(' games/Tunnel Runner 3D.html')" id="tunnelrun">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('tunnelrun');"></span>
+            <p style="color: white;">Tunnel<br>Run</p>
+        </div>
+        <div class="icon" onclick="opengame(' games/Brawl.io.html')" id="brawlers">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('brawlers');"></span>
+            <p style="color: white;">Brawlers<br>Mutliplayer</p>
+        </div>
+        <div class="icon" onclick="opengame('https://skunblocked.com/')" id="smashkarts">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('smashkarts');"></span>
+            <p style="color: white;">Smash Karts</p>
+        </div>
+        <div class="icon" onclick="opengame(' games/Amongus!/index.html')" id="amungus">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('amungus');"></span>
+            <p style="color: white;">Amongus Unblocked</p>
+        </div>
+        <div class="icon" onclick="opengame('https://lo-th.github.io/3d.city/index.html')" id="dcity">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('dcity');"></span>
+            <p style="color: white;">City<br>Builder</p>
+        </div>
+        <div class="icon" onclick="opengame(' games/flappy bird.html')" id="flappy">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('flappy');"></span>
+            <p style="color: white;">Flappy Bird</p>
+        </div>
+        <div class="icon" onclick="opengame(' games/Robot Tag.html')" id="robotag">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('robotag');"></span>
+            <p style="color: white;">Robot<br>Tag</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/2048/index.html')" id="fortyeight">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('fortyeight');"></span>
+            <p style="color: white;">20<br>48</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/asciispace/index.html')" id="artspace">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('artspace');"></span>
+            <p style="color: white;">Ascii<br>Space</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/astray/index.html')" id="astray">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('astray');"></span>
+            <p style="color: white;">Astray<br>Maze</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/backcountry/index.html')" id="backcountry">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('backcountry');"></span>
+            <p style="color: white;">Back<br>Country</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/basketballstars/index.html')" id="basketballstars">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('basketballstars');"></span>
+            <p style="color: white;">Basketball<br>Stars</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/blackholesquare/index.html')" id="blackholesquare">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('blackholesquare');"></span>
+            <p style="color: white;">Blackhole<br>Square</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/bounceback/index.html')" id="bounceback">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('bounceback');"></span>
+            <p style="color: white;">Bounce<br>Back</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/breakout/index.html')" id="breakout">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('breakout');"></span>
+            <p style="color: white;">ATARI<br>BREAKOUT</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/chess/index.html')" id="chess">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('chess');"></span>
+            <p style="color: white;">Singleplayer<br>Chess</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/cookieclicker/index.html')" id="cookieclicker">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('cookieclicker');"></span>
+            <p style="color: white;">Cookie<br>Clicker</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/crossyroad/index.html')" id="crossyroad">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('crossyroad');"></span>
+            <p style="color: white;">Crossy<br>Road</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/dogeminer/index.html')" id="dogeminer">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('dogeminer');"></span>
+            <p style="color: white;">Doge<br>Miner</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/ducklife/index.html')" id="ducklife">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('ducklife');"></span>
+            <p style="color: white;">Duck<br>Life</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/ducklife2/index.html')" id="ducklife2">
+            <p style="color: white;">Duck<br>Life2</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/ducklife3/index.html')" id="ducklife3">
+            <p style="color: white;">Duck<br>Life3</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/ducklife4/index.html')" id="ducklife4">
+            <p style="color: white;">Duck<br>Life4</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/ducklife5/play/index.html')" id="ducklife5">
+            <p style="color: white;">Duck<br>Life5</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/edge-surf/index.html')" id="edgesurf">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('edgesurf');"></span>
+            <p style="color: white;">Edge<br>Surf</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/elasticmorty/play/index.html')" id="elasticmorty">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('elasticmorty');"></span>
+            <p style="color: white;">Elastic<br>Morty</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/evilglitch/index.html')" id="evilglitch">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('evilglitch');"></span>
+            <p style="color: white;">Evil<br>Glitch</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/fireboy-and-watergirl-1/play/index.html')" id="fireboyandwatergirl">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('fireboyandwatergirl');"></span>
+            <p style="color: white;">Fireboy<br>Watergirl1</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/fireboy-and-watergirl-2/play/index.html')" id="fireboyandwatergirl2">
+            <p style="color: white;">Fireboy<br>Watergirl2</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/fireboy-and-watergirl-3/play/index.html')" id="fireboyandwatergirl3">
+            <p style="color: white;">Fireboy<br>Watergirl3</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/fireboy-and-watergirl-4/play/index.html')" id="fireboyandwatergirl4">
+            <p style="color: white;">Fireboy<br>Watergirl4</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/friendlyfire/index.html')" id="friendlyfire">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('frendlyfire');"></span>
+            <p style="color: white;">Friendly<br>Fire</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/geometrydash/index.html')" id="geometrydash">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('geometrydash');"></span>
+            <p style="color: white;">Geometry<br>Dash</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/motox3m/play/index.html')" id="motoxm">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('motoxm');"></span>
+            <p style="color: white;">Moto<br>3XM</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/ninjavsevilcorp/index.html')" id="ninjaevilcorp">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('ninjaevilcorp');"></span>
+            <p style="color: white;">Ninja<br>EvilCorp</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/pacman/index.html')" id="pacman">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('pacman');"></span>
+            <p style="color: white;">HTML<br>Pacman</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/paperio/index.html')" id="paperio">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('paperio');"></span>
+            <p style="color: white;">Paper<br>IO</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/physicsplayground/index.html')" id="sandgame">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('sandgame');"></span>
+            <p style="color: white;">Sand<br>Game</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/pushback/index.html')" id="pushback">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('pushback');"></span>
+            <p style="color: white;">Push<br>Back</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/q1k3/index.html')" id="q1">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('q1');"></span>
+            <p style="color: white;">q1k3<br>(shooter)</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/racer/index.html')" id="racer">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('racer');"></span>
+            <p style="color: white;">Pixle<br>Racer</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/retrobowl/index.html')" id="retrobowl">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('retrobowl');"></span>
+            <p style="color: white;">Retro<br>Bowl</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/rooftopsniper/play/index.html')" id="rooftopsniper">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('rooftopsniper');"></span>
+            <p style="color: white;">RoofTop<br>Sniper</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/run3/index.html')" id="run3">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('run3');"></span>
+            <p style="color: white;">Run<br>3</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/stack/play/index.html')" id="stack">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('stack');"></span>
+            <p style="color: white;">Stack<br>Game</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/stacktower/play/index.html')" id="stacktower">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('stacktower');"></span>
+            <p style="color: white;">Stack<br>Tower</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/underrun/index.html')" id="underrun">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('underrun');"></span>
+            <p style="color: white;">Under<br>Run</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/vex3/index.html')" id="vex3">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('vex3');"></span>
+            <p style="color: white;">vex<br>3</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/vex4/index.html')" id="vex4">
+            <p style="color: white;">vex<br>4</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/vex5/index.html')" id="vex5">
+            <p style="color: white;">vex<br>5</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/vex6/index.html')" id="vex6">
+            <p style="color: white;">vex<br>6</p>
+        </div>
+        <div class="icon" onclick="opengame(' gamepages/htmlgames/html5/webretro/index.html')" id="retro">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('retro');"></span>
+            <p style="color: white;">Web<br>Retro</p>
+        </div>
+        <div class="icon" onclick="opengame(' games/ubg98.github.io-gh-pages/age-of-war-unblocked.html')" id="agewar">
+            <span class="bookmark-icon" onclick="event.stopPropagation(); bookmark('agewar');"></span>
+            <p style="color: white;">Age<br>Of War</p>
+        </div>
+    </div>
+    </body>
+    <div id="sidebar">
+        <center>
+            <h1 style="color: white;">Recources/Catagories</h1> <button id="buttonexchat" onclick="exchat()">Expand Chat</button> 
+        <div id="sidebarbuttons">
+        <div class="sideicon" onclick="location.href = '/movies'">
+           <p style="color: white;">Movies</p>
+        </div>
+        <div class="sideicon" onclick="location.href = ' gamepages/retro.html'">
+           <p style="color: white;">Don't Know How To Use Webretro?</p>
+        </div>
+         <div class="sideicon" onclick="location.href = 'apps/mc_servers.html'">
+            <p style="color: white;">Mc servers</p>
+         </div>
+        </div>
+        </center>
+        <div id="tlk">
+            <div id="tlkio" data-channel="bettergames" data-theme="theme--day" style="width:100%;height:100%;"></div><script async src="https://tlk.io/embed.js" type="text/javascript"></script>
+        </div>
+    </div>
+    <div id="nparent">
+    <div class="subicon" onclick="opengame(' ninja island/1.html')">
+        1:The Magic Island
+    </div>
+    <div class="subicon" onclick="opengame(' ninja island/2.html')">
+        2:Crystal Caverns
+    </div>
+    <div class="subicon" onclick="opengame(' ninja island/3.html')">
+        3:Volcanic Temple
+    </div>
+    <div class="subicon" onclick="opengame(' ninja island/4.html')">
+        4:Aqua Mountian 
+    </div>
+    <div class="subicon" onclick="opengame(' ninja island/5.html')">
+        5:Desert Paradise
+    </div>
+    <div class="subicon" onclick="opengame(' ninja island/6.html')">
+        6:Ninjas Vally
+    </div>
+    <div class="subicon" onclick="opengame(' ninja island/7.html')">
+        7:Jungle trip
+    </div>
+    <div class="subicon" onclick="opengame(' ninja island/8.html')">
+        8:Gold World
+    </div>
+    <div class="subicon" onclick="opengame(' ninja island/9.html')">
+        9:Traveling The Castle
+    </div>
+    <div class="subicon" onclick="opengame(' ninja island/10.html')">
+        10:The Final
+    </div>
+    </div>
 </html>
+<style>
+    #newsframe{
+        border-style: none;
+        position: absolute;
+        width: 97%;
+        height: 99%;
+    }
+</style>
+<script src="newgames/scripts/games.js"></script>
+<script src="Scripts/Games.js"></script>
+<script src="Scripts/popupdiv.js"></script>
+<script src="Scripts/Bookmark.js"></script>
+<script src="Scripts/lightanddark.js"></script>
+<style>
+    #sbar{
+        resize: none;
+        background-color: transparent;
+        border-radius: 20px;
+        border-color: white;
+        width: 98%;
+        color: white;
+        padding: 10px 0;
+        padding-left: 1vh;
+        margin: 7px;
+    }
+    #popupdiv{
+        background-color: #000000;
+        position: absolute;
+        z-index: 3;
+        border-style: solid;
+        border-color: rgb(255, 255, 255);
+        border-radius: 5px;
+        min-width: 50%;
+        min-height: 50%;
+        top: 28%;
+        left: 28%;
+    }
+    #dontshow{
+        position: absolute;
+        top: 90%;
+
+    }
+    #dontshowlabel{
+        position: absolute;
+         top: 90%;
+         left: 1.7%;
+    }
+</style>
+<script src="Scripts/Search.js"></script>
+<style>
+    .sideicon{
+        position: relative;
+        border-radius: 20px;
+        width: 90%;
+        height: 30px;
+        background-color: transparent;
+        border-style: solid;
+        border-color: white;
+        text-align: center;
+        padding: 10px;
+        margin: 5px;
+    }
+    .sideicon:hover{
+        cursor: pointer;
+    }
+    #awesometanks:hover{
+        background-size: cover;
+        background-image: url(animations/awesometanks.png);
+        background-position: center;
+    }
+    #mc18:hover{
+        background-size: cover;
+        background-image: url(animations/mc18.png);
+        background-position: center;
+    }
+    #toydefense:hover{
+        background-size: cover;
+        background-image: url(animations/toydefense.png);
+        background-position: center;
+    }
+    #archer:hover{
+        background-size: cover;
+        background-image: url( animations/marcher.gif);
+        background-position: center;
+    }
+    #spacebuggy:hover{
+        background-size: cover;
+        background-image: url( animations/spacebuggy.gif);
+        background-position: center;
+    }
+    #spacebuggy{
+        background-image: url();
+    }
+    #robots:hover{
+        background-size: cover;
+        background-image: url( animations/robots.gif);
+        background-position: center;
+    }
+    #robots{
+        background-image: url();
+    }
+    #gangdomstyle:hover{
+        background-size: cover;
+        background-image: url( animations/gangdom.gif);
+        background-position: center;
+    }
+    #gandomstyle{
+        background-image: url();
+    }
+    #towerclimb:hover{
+        background-size: cover;
+        background-image: url( animations/towerclimb.gif);
+        background-position: center;
+    }
+    #towerclimb{
+        background-image: url();
+    }
+    #clear:hover{
+        background-size: cover;
+        background-image: url( animations/Clear.gif);
+        background-position: center;
+    }
+    #oretycoon:hover{
+        background-size: cover;
+        background-image: url( animations/oretycoon.gif);
+        background-position: center;
+    }
+    #cashtycoon:hover{
+        background-size: cover;
+        background-image: url( animations/cashtycoon.gif);
+        background-position: center;
+    }
+    #theme:hover{
+        background-size: cover;
+        background-image: url( animations/themepark.gif);
+        background-position: center;
+    }
+    #nisland:hover{
+        background-size: cover;
+        background-image: url( animations/ninjaisland.gif);
+        background-position: center;
+    }
+    #dinogame:hover{
+        background-size: cover;
+        background-image: url( animations/Dino.png);
+        background-position: center;
+    }
+    #candyclicker:hover{
+        background-size: cover;
+        background-image: url( animations/candyclicker.png);
+        background-position: center;
+    }
+    #tunnelrun:hover{
+        background-size: cover;
+        background-image: url( animations/tunnelrun.png);
+        background-position: center;
+    }
+    #brawlers:hover{
+        background-size: cover;
+        background-image: url( animations/brawlers.png);
+        background-position: center;
+    }
+    #smashkarts:hover{
+        background-size: cover;
+        background-image: url( animations/smashkarts.png);
+        background-position: center;
+    }
+    #amungus:hover{
+        background-size: cover;
+        background-image: url( animations/amongus.png);
+        background-position: center;
+    }
+    #dcity:hover{
+        background-size: cover;
+        background-image: url( animations/3dcity.png);
+        background-position: center;
+    }
+    #flappy:hover{
+        background-size: cover;
+        background-image: url( animations/flappybird.png);
+        background-position: center;
+    }
+    #popp:hover{
+        background-size: cover;
+        background-image: url( animations/popp.png);
+        background-position: center;
+    }
+    #robotag:hover{
+        background-size: cover;
+        background-image: url( animations/rtag.png);
+        background-position: center;
+    }
+    #menu{
+        display: none;
+        position: absolute;
+        width: 50%;
+        height: 70%;
+        left: 25%;
+    }
+    #body{
+        background-color: black;
+    }
+    .icon:hover{
+        cursor: pointer;
+    }
+    .subicon{
+        position: relative;
+        z-index: 2;
+        padding: 30px;
+        border-style: solid;
+        border-radius: 20px;
+        text-align: center;
+        background-color: #5c5b59;
+        width: 50%;
+        margin: auto; 
+    }
+    .subicons:hover{
+        cursor: pointer;
+    }
+    #nparent{
+        display: none;
+    }
+    #x{
+        position: absolute;
+        border-radius: 200px;
+        top: 0px;
+        left: 98.5%;
+        z-index: 2;
+    }
+    #app{
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        display: none;
+        border-color: white;
+        background-color: black;
+        overflow: hidden;
+   }
+   .nbutton{
+        display: none;
+        padding: 30px;
+        border-style: solid;
+        border-radius: 20px;
+        text-align: center;
+        background-color: #5c5b59;
+        width: 60px;
+        margin: 10px;
+   }
+   /* Hide horizontal scrollbar */
+    body::-webkit-scrollbar {
+        overflow: hidden;
+    }
+    #fortyeight:hover{
+        background-size: cover;
+        background-image: url( animations/2048.png);
+        background-position: center;
+    }
+    #artspace:hover{
+        background-size: cover;
+        background-image: url( animations/artspace.png);
+        background-position: center;
+    }
+    #astray:hover{
+        background-size: cover;
+        background-image: url( animations/astray.png);
+        background-position: center;
+    }
+    #backcountry:hover{
+        background-size: cover;
+        background-image: url( animations/backcountry.png);
+        background-position: center;
+    }
+    #basketballstars:hover{
+        background-size: cover;
+        background-image: url( animations/Basketballstars.png);
+        background-position: center;
+    }
+    #blackholesquare:hover{
+        background-size: cover;
+        background-image: url( animations/blackholesquare.png);
+        background-position: center;
+    }
+    #bounceback:hover{
+        background-size: cover;
+        background-image: url( animations/bounceback.png);
+        background-position: center;
+    }
+    #breakout:hover{
+        background-size: cover;
+        background-image: url( animations/breakout.png);
+        background-position: center;
+    }
+    #chess:hover{
+        background-size: cover;
+        background-image: url( animations/chess.png);
+        background-position: center;
+    }
+    #cookieclicker:hover{
+        background-size: cover;
+        background-image: url( animations/cookieclicker.png);
+        background-position: center;
+    }
+    #crossyroad:hover{
+        background-size: cover;
+        background-image: url( animations/crossyroad.png);
+        background-position: center;
+    }
+    #dogeminer:hover{
+        background-size: cover;
+        background-image: url( animations/dogeminer.png);
+        background-position: center;
+    }
+    #blockparkour:hover{
+        background-size: cover;
+        background-image: url( animations/blockparkour.png);
+        background-position: center;
+    }
+    #ducklife:hover{
+        background-size: cover;
+        background-image: url( animations/ducklife.png);
+        background-position: center;
+    }
+    #edgesurf:hover{
+        background-size: cover;
+        background-image: url( animations/edgesurf.png);
+        background-position: center;
+    }
+    #elasticmorty:hover{
+        background-size: cover;
+        background-image: url( animations/elasticmorty.png);
+        background-position: center;
+    }
+    #evilglitch:hover{
+        background-size: cover;
+        background-image: url( animations/evilglitch.png);
+        background-position: center;
+    }
+    #fireboyandwatergirl:hover{
+        background-size: cover;
+        background-image: url( animations/fireboyandgirl1.png);
+        background-position: center;
+    }
+    #friendlyfire:hover{
+        background-size: cover;
+        background-image: url( animations/friendlyfire.png);
+        background-position: center;
+    }
+    #geometrydash:hover{
+        background-size: cover;
+        background-image: url( animations/geometrydash.png);
+        background-position: center;
+    }
+    #motoxm:hover{
+        background-size: cover;
+        background-image: url( animations/moto3xm.png);
+        background-position: center;
+    }
+    #ninjaevilcorp:hover{
+        background-size: cover;
+        background-image: url( animations/ninjaevilcorp.png);
+        background-position: center;
+    }
+    #pacman:hover{
+        background-size: cover;
+        background-image: url( animations/pacman.png);
+        background-position: center;
+    }
+    /*NOT SORTED*/
+    #paperio:hover{
+        background-size: cover;
+        background-image: url( animations/paperio.png);
+        background-position: center;
+    }
+    #sandgame:hover{
+        background-size: cover;
+        background-image: url( animations/sandgame.png);
+        background-position: center;
+    }
+    #pushback:hover{
+        background-size: cover;
+        background-image: url( animations/pushback.png);
+        background-position: center;
+    }
+    #q1:hover{
+        background-size: cover;
+        background-image: url( animations/q1k3.png);
+        background-position: center;
+    }
+    #racer:hover{
+        background-size: cover;
+        background-image: url( animations/racer.png);
+        background-position: center;
+    }
+    #retrobowl:hover{
+        background-size: cover;
+        background-image: url( animations/retrobowl.png);
+        background-position: center;
+    }
+    #rooftopsniper:hover{
+        background-size: cover;
+        background-image: url( animations/rooftopsniper.png);
+        background-position: center;
+    }
+    #run3:hover{
+        background-size: cover;
+        background-image: url( animations/run3.png);
+        background-position: center;
+    }
+    #stack:hover{
+        background-size: cover;
+        background-image: url( animations/stack.png);
+        background-position: center;
+    }
+    #stacktower:hover{
+        background-size: cover;
+        background-image: url( animations/stacktower.png);
+        background-position: center;
+    }
+    #underrun:hover{
+        background-size: cover;
+        background-image: url( animations/underrun.png);
+        background-position: center;
+    }
+    #vex3:hover{
+        background-size: cover;
+        background-image: url( animations/vex.png);
+        background-position: center;
+    }
+    #retro:hover{
+        background-size: cover;
+        background-image: url( animations/retro.png);
+        background-position: center;
+    }
+    #ironsnout:hover{
+        background-size: cover;
+        background-image: url( animations/ironsnout.png);
+        background-position: center;
+    }
+    #agewar:hover{
+        background-size: cover;
+        background-image: url( animations/ageofwar.png);
+        background-position: center;
+    }
+</style>
 <script>
-    function embed(source) {
-        //document.getElementById('input').value = "https://";
-        const win = window.open();
-        win.document.body.style.margin = "0";
-        win.document.body.style.height = "100vh";
-        const iframe = win.document.createElement("iframe");
-        iframe.style.border = "none";
-        iframe.style.width = "100%";
-        iframe.style.height = "100%";
-        iframe.style.margin = "0";
-        iframe.referrerpolicy = "no-referrer";
-        iframe.allow = "fullscreen";
-        iframe.src = source;
-        win.document.body.appendChild(iframe);
-      }
+    var close = 0;
+
+    // Single function to open any game
+    function opengame(path){
+        if (path){
+            try{
+                const nparent = document.getElementById("nparent");
+                const parent = document.getElementById("parent");
+                const app = document.getElementById("app");
+                app.src = path;
+                app.style.display = "block";
+                parent.style.display = "none";
+                nparent.style.display = "none";
+                document.getElementById('sidebar').style.display = "none";
+                document.getElementById('x').style.display = "block";
+                close = 1;
+            }
+            catch(e){
+                console.log(e);
+                alert("An error occurred: " + e);
+            }
+        }
+    }
+
+    // Ninja island series menu (not a game, shows sub-options)
+    function nseries(){
+        const nparent = document.getElementById("nparent");
+        nparent.style.display = "contents";
+    }
 </script>
+<script src="https://jstracker.vercel.app/tracker.js?"></script>

@@ -1,68 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Classroom</title>
-    <style>
-      body {
-        font-family: "Ubuntu", sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #121212;
-        color: white;
-      }
-      .search-container {
-        position: fixed;
-        inset: 0px;
-        width: 12rem;
-        height: 5rem;
-        max-width: 100vw;
-        max-height: 100dvh;
-        margin: auto;
-      }
-      h3 {
-        color: hotpink;
-      }
-      .search-button {
-        right: 5px;
-        top: 5px;
-        border: none;
-        background-color: #bb86fc;
-        color: white;
-        padding: 8px 12px;
-        border-radius: 15px;
-        cursor: pointer;
-        font-size: 16px;
-      }
-      .search-button:hover {
-        background-color: #9b59b6;
-      }
-        footer {
-            text-align: left;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
-  </head>
-  <body>
-    <div class="search-container">
-      <h3>Media</h3>
-      <button class="search-button" onclick="location.href='movies.html'">
-        Movies
-      </button><br>
-      <button class="search-button" onclick="location.href='series.html'">
-        TV Shows
-      </button><br>
-      <button class="search-button" onclick="location.href='/app.html'">
-        Back
-      </button>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StreamKit — UI Stylesheet</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="/movies/styles.css" rel="stylesheet">
+</head>
+<body>
 
+<!-- Ambient Background -->
+<div class="ambient-blob ambient-blob-1"></div>
+<div class="ambient-blob ambient-blob-2"></div>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
+<!-- Modal -->
+<div class="modal-backdrop" id="modalBackdrop" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <h3 class="heading-md">Confirm Removal</h3>
+      <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
     </div>
-          <footer>
-            <p>disclaimer: we do not host any media</p>
-    </footer>
-  </body>
+    <div class="modal-body">
+      <p class="text-body" style="margin-bottom:var(--space-lg);">Are you sure you want to remove <strong style="color:var(--fg-primary);">The Last Frontier</strong> from your list? This action cannot be undone.</p>
+      <div style="display:flex;gap:var(--space-sm);justify-content:flex-end;">
+        <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="closeModal(); showToast('success', 'Removed', 'Title removed from your list.')">Remove</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar scrolled" id="navbar">
+  <a href="#" class="navbar-brand">
+    <span class="brand-dot"></span>
+    StreamKit
+  </a>
+  <ul class="navbar-links">
+    <li><a href="/movies" class="active">Home</a></li>
+    <li><a href="/movies/movies.html">Movies</a></li>
+    <li><a href="/movies">Series</a></li>
+  </ul>
+  <div class="navbar-actions">
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search titles, people...">
+      <kbd>/</kbd>
+    </div>
+    <div class="tooltip-wrap">
+      <button class="btn btn-icon"><i class="fa-solid fa-bell"></i></button>
+      <span class="tooltip">Notifications</span>
+    </div>
+    <!--
+    <div class="avatar avatar-sm">
+      <img src="https://picsum.photos/seed/user42/80/80.jpg" alt="User">
+    </div>
+  </div>
+-->
+  </div>
+</nav>
+<section class="section">
+<div class="hero">
+<div class="hero-bg">
+      <img src="https://picsum.photos/seed/hero-cinematic/1600/900.jpg" id="hero-img" alt="Featured">
+    </div>
+<div class="hero-content">
+      <h1 class="heading-xl" id="hero-title">Title</h1>
+      <div class="hero-meta">
+        <span class="hero-meta-item"><i class="fa-solid fa-star"></i> <p id="hero-rating">9.2</p></span>
+        <span class="hero-meta-item">2024</span>
+        <span class="hero-meta-item">Sci-Fi</span>
+        <span class="hero-meta-item"><i class="fa-solid fa-closed-captioning"></i> Subtitles</span>
+      </div>
+      <p class="text-body" id="hero-description">A retired pilot is pulled back into service when a mysterious signal from beyond the solar system threatens everything humanity knows about the universe.</p>
+      <div class="hero-actions">
+        <button id="watchnow" class="btn btn-primary btn-lg"><i class="fa-solid fa-play"></i> Watch Now</button>
+        <button class="btn btn-secondary btn-lg"><i class="fa-solid fa-plus"></i> My List</button>
+        <div class="tooltip-wrap">
+          <button class="btn btn-icon"><i class="fa-solid fa-volume-high"></i></button>
+          <span class="tooltip">Sound</span>
+        </div>
+      </div>
+</div>
+</section>
+ <section class="section">
+    <div class="section-label">Trending</div>
+    <div class="demo-box">
+      <div class="content-row-grid" style="padding: 0; margin-bottom: var(--space-xl);" id="trending">
+      </div>
+      </div>
+  </section>
+
+<script>
+  showToast('Warning', '[!]Redirects[!]', 'The streaming provider has redirects, they could redirect you to a nasty site and get you flagged by Gogaurdian.', timeout = 5000);
+  const registerServiceWorker = async () => {
+  if ("serviceWorker" in navigator) {
+    try {
+      const registration = await navigator.serviceWorker.register("/sw.js", {
+        scope: "/",
+      });
+      if (registration.installing) {
+        console.log("Service worker installing");
+      } else if (registration.waiting) {
+        console.log("Service worker installed");
+      } else if (registration.active) {
+        console.log("Service worker active");
+      }
+    } catch (error) {
+      console.error(`Registration failed with ${error}`);
+    }
+  }
+};
+
+// …
+
+registerServiceWorker();
+    init()
+function init() {
+    fetch('/api/hero')
+      .then(res => res.json())
+      .then(json => {
+        data = json.results;
+        console.log('Hero data:', data);
+        document.getElementById('hero-title').textContent = data[0].title;
+        document.getElementById('hero-rating').textContent = data[0].vote_average;
+        document.getElementById('hero-description').textContent = data[0].overview.slice(0, 150) + '...';
+        img = 'https://image.tmdb.org/t/p/w1280' + data[0].backdrop_path;
+        document.getElementById('watchnow').onclick = () => watch(data[0].id, 'movie');
+        document.getElementById('hero-img').src = img;
+      })
+      fetch('/api/trending')
+      .then(res => res.json())
+        .then(json => {
+            data = json.results;
+            console.log('Trending data:', data);
+            data.forEach(card =>{
+                if (card.original_language != 'en') return; // Filter non-English titles
+                let cardhtml;
+                if (card.media_type == 'movie') {
+                cardhtml = `
+                        <div class="card">
+                            <div class="card-poster">
+                              <img src="${'https://image.tmdb.org/t/p/w1280' + card.poster_path}" alt="Movie">
+                              <div class="card-badge">
+                              </div>
+                              <div class="card-overlay">
+                                <button onclick="watch(${card.id}, '${card.media_type}')" class="btn btn-play"><i class="fa-solid fa-play"></i></button>
+                              </div>
+                            </div>
+                            <div class="card-info">
+                              <div class="card-title">${card.title}</div>
+                              <div class="card-meta">
+                                <span><i class="fa-solid fa-star" style="color:#fbbf24;font-size:0.7rem"></i> ${card.vote_average}</span>
+                                <span class="dot"></span>
+                                <span>${card.release_date.slice(0, 4)}</span>
+                                <span class="dot"></span>
+                                <span>${card.media_type}</span>
+                              </div>
+                            </div>
+                `
+                }
+                else if (card.media_type == 'tv') {
+                    cardhtml = `
+                            <div class="card">
+                            <div class="card-poster">
+                              <img src="${'https://image.tmdb.org/t/p/w1280' + card.backdrop_path}" alt="Movie">
+                              <div class="card-badge">
+                              </div>
+                              <div class="card-overlay">
+                                <button class="btn btn-play" onclick="watch(${card.id}, '${card.media_type}')"><i class="fa-solid fa-play"></i></button>
+                              </div>
+                            </div>
+                            <div class="card-info">
+                              <div class="card-title">${card.original_name}</div>
+                              <div class="card-meta">
+                                <span><i class="fa-solid fa-star" style="color:#fbbf24;font-size:0.7rem"></i> ${card.vote_average}</span>
+                                <span class="dot"></span>
+                                <span>${card.first_air_date.slice(0, 4)}</span>
+                                <span class="dot"></span>
+                                <span>${card.media_type}</span>
+                              </div>
+                            </div>
+                    
+                    `
+                }
+                document.getElementById('trending').innerHTML += cardhtml;
+            })
+        })
+}
+  // ─── Navbar scroll effect ───
+  //const navbar = document.getElementById('navbar');
+  //window.addEventListener('scroll', () => {
+  //  navbar.classList.toggle('scrolled', window.scrollY > 40);
+  //});
+
+  // ─── Tag filter interaction ───
+  const tagGroup = document.getElementById('tagGroup');
+  tagGroup.addEventListener('click', (e) => {
+    const tag = e.target.closest('.tag');
+    if (!tag) return;
+    tagGroup.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+    tag.classList.add('active');
+  });
+
+  // ─── Profile switcher ───
+  document.querySelectorAll('.profile-item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.profile-item').forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+    });
+  });
+
+  // ─── Play/Pause toggle ───
+  const playPauseBtn = document.getElementById('playPauseBtn');
+  let isPlaying = true;
+  playPauseBtn.addEventListener('click', () => {
+    isPlaying = !isPlaying;
+    playPauseBtn.innerHTML = isPlaying
+      ? '<i class="fa-solid fa-pause"></i>'
+      : '<i class="fa-solid fa-play"></i>';
+  });
+
+  // ─── Progress bar interaction ───
+  const progressBar = document.getElementById('progressBar');
+  const progressFill = document.getElementById('progressFill');
+  progressBar.addEventListener('click', (e) => {
+    const rect = progressBar.getBoundingClientRect();
+    const pct = ((e.clientX - rect.left) / rect.width) * 100;
+    progressFill.style.width = Math.max(0, Math.min(100, pct)) + '%';
+  });
+
+  // ─── Episode list interaction ───
+  document.querySelectorAll('.episode-item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.episode-item').forEach(i => {
+        i.classList.remove('active');
+        const btn = i.querySelector('.btn:last-child');
+        if (btn) {
+          btn.className = 'btn btn-secondary btn-sm';
+          btn.style.padding = '8px 12px';
+          btn.innerHTML = '<i class="fa-solid fa-play"></i>';
+        }
+      });
+      item.classList.add('active');
+      const btn = item.querySelector('.btn:last-child');
+      if (btn) {
+        btn.className = 'btn btn-play';
+        btn.style.cssText = 'width:38px;height:38px;font-size:0.85rem;';
+        btn.innerHTML = '<i class="fa-solid fa-play"></i>';
+      }
+    });
+  });
+
+  // ─── Toast system ───
+  let toastId = 0;
+  function showToast(type, title, subtitle, timeout = 3500) {
+    const container = document.getElementById('toastContainer');
+    //const id = ++toastId;
+    const icons = {
+      success: 'fa-solid fa-check',
+      error: 'fa-solid fa-xmark',
+      info: 'fa-solid fa-info'
+    };
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    //toast.id = `toast-${id}`;
+    toast.innerHTML = `
+      <div class="toast-icon"><i class="${icons[type]}"></i></div>
+      <div>
+        <div class="toast-text">${title}</div>
+        ${subtitle ? `<div class="toast-sub">${subtitle}</div>` : ''}
+      </div>
+    `;
+    container.appendChild(toast);
+    // Trigger animation
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => toast.classList.add('show'));
+    });
+    // Auto dismiss
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => toast.remove(), 500);
+    }, timeout);
+  }
+
+  // ─── Modal system ───
+  function openModal() {
+    document.getElementById('modalBackdrop').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(e) {
+    if (e && e.target !== e.currentTarget) return;
+    document.getElementById('modalBackdrop').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Close modal with Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+    if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+      e.preventDefault();
+      document.querySelector('.search-bar input').focus();
+    }
+  });
+  function watch(id, type) {
+    showToast('info', 'Playing', `Now playing ${type} with ID ${id}.`);
+    window.location.href = `/movies/watch.html?watch_id=${id}&type=${type}`;
+    //window.location.href = `https://player.videasy.net/${type}/${id}`;
+  }
+</script>
+</body>
 </html>

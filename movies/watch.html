@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Watch - Vids</title>
+    </head>
+    <body id="body">
+        <div class="iframe-container" style="position: relative; width: 100%; max-width: 800px;">
+            <iframe
+            src=""
+            width="100%"
+            height="100%"
+            style="position:fixed;top:0;left:0;"
+            frameborder="0"
+            allowfullscreen
+            ></iframe>
+</div>
+        <script>
+            args = new URLSearchParams(window.location.search);
+            const watchId = args.get('watch_id');
+            const type = args.get('type');
+            document.getElementsByTagName('iframe')[0].src = `https://player.videasy.net/${type}/${watchId}`;
+        </script>
+</html>

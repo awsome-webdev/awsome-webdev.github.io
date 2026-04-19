@@ -1,100 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classroom</title>
-    <style>
-        body {
-          font-family: "Ubuntu", sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #121212;
-            color: white;
-        }
-        .search-container {
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-            position: relative;
-            top: 0;
-            width: 100%;
-        }
-        .search-bar {
-            width: 300px;
-            padding: 10px;
-            border: 2px solid #BB86FC;
-            border-radius: 25px;
-            outline: none;
-            font-size: 16px;
-            background-color: #1E1E1E;
-            color: white;
-        }
-        .search-button {
-            position: absolute;
-            margin: 10px;
-            left: 10px;
-            top: 5px;
-            border: none;
-            background-color: #BB86FC;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .search-button:hover {
-            background-color: #9B59B6;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StreamKit — UI Stylesheet</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="/movies/styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="search-container">
-        <input type="text" class="search-bar" id="search-input" placeholder="Search for movies...">
-        <button class="search-button" onclick="location.href = '/movies/index.html'">Back</button>
+
+<!-- Ambient Background -->
+<div class="ambient-blob ambient-blob-1"></div>
+<div class="ambient-blob ambient-blob-2"></div>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
+<!-- Modal -->
+<div class="modal-backdrop" id="modalBackdrop" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <h3 class="heading-md">Confirm Removal</h3>
+      <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
     </div>
-    <div id="results"></div>
+    <div class="modal-body">
+      <p class="text-body" style="margin-bottom:var(--space-lg);">Are you sure you want to remove <strong style="color:var(--fg-primary);">The Last Frontier</strong> from your list? This action cannot be undone.</p>
+      <div style="display:flex;gap:var(--space-sm);justify-content:flex-end;">
+        <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="closeModal(); showToast('success', 'Removed', 'Title removed from your list.')">Remove</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar scrolled" id="navbar">
+  <a href="#" class="navbar-brand">
+    <span class="brand-dot"></span>
+    StreamKit
+  </a>
+  <ul class="navbar-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="#" class="active">Movies</a></li>
+    <li><a href="#">Series</a></li>
+  </ul>
+  <div class="navbar-actions">
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search titles, people...">
+      <kbd>/</kbd>
+    </div>
+    <div class="tooltip-wrap">
+      <button class="btn btn-icon"><i class="fa-solid fa-bell"></i></button>
+      <span class="tooltip">Notifications</span>
+    </div>
+    <!--
+    <div class="avatar avatar-sm">
+      <img src="https://picsum.photos/seed/user42/80/80.jpg" alt="User">
+    </div>
+  </div>
+-->
+  </div>
+</nav>
+ <section class="section">
+    <div class="section-label">Trending</div>
+    <div class="demo-box">
+      <div class="content-row-grid" style="padding: 0;flex-wrap: wrap; margin-bottom: var(--space-xl);" id="trending">
+      </div>
+      </div>
+  </section>
+
 <script>
-var base = 'https://api.themoviedb.org/3/search/movie?';
-var key = 'ae4bd1b6fce2a5648671bfc171d15ba4';
-// Get a reference to the input element
-const inputElement = document.getElementById("search-input");
+    init()
+function init() {
+      fetch('/api/discover/movie')
+      .then(res => res.json())
+        .then(json => {
+            data = json.results;
+            console.log('Trending data:', data);
+            data.forEach(card =>{
+                let cardhtml;
+                console.log('Processing card:', card);
+                cardhtml = `
+                        <div class="card">
+                            <div class="card-poster">
+                              <img src="${'https://image.tmdb.org/t/p/w1280' + card.poster_path}" alt="Movie">
+                              <div class="card-badge">
+                              </div>
+                              <div class="card-overlay">
+                                <button onclick='watch(${card.id}, "movie")' class="btn btn-play"><i class="fa-solid fa-play"></i></button>
+                              </div>
+                            </div>
+                            <div class="card-info">
+                              <div class="card-title">${card.title}</div>
+                              <div class="card-meta">
+                                <span><i class="fa-solid fa-star" style="color:#fbbf24;font-size:0.7rem"></i> ${card.vote_average}</span>
+                                <span class="dot"></span>
+                                <span>${card.release_date.slice(0, 4)}</span>
+                                <span class="dot"></span>
+                                <span>${card.original_language}</span>
+                              </div>
+                            </div>
+                `
+                document.getElementById('trending').innerHTML += cardhtml;
+            })
+        })
+}
+  // ─── Navbar scroll effect ───
+  //const navbar = document.getElementById('navbar');
+  //window.addEventListener('scroll', () => {
+  //  navbar.classList.toggle('scrolled', window.scrollY > 40);
+  //});
 
-// Add an event listener for the 'keydown' event
-inputElement.addEventListener("keydown", function(event) {
-  // Check if the pressed key is 'Enter' (key code 13)
-  if (event.key === "Enter" || event.keyCode === 13) {
-    // Call your function here
-    search();
+  // ─── Tag filter interaction ───
+  const tagGroup = document.getElementById('tagGroup');
+  tagGroup.addEventListener('click', (e) => {
+    const tag = e.target.closest('.tag');
+    if (!tag) return;
+    tagGroup.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+    tag.classList.add('active');
+  });
+
+  // ─── Profile switcher ───
+  document.querySelectorAll('.profile-item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.profile-item').forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+    });
+  });
+
+  // ─── Play/Pause toggle ───
+  const playPauseBtn = document.getElementById('playPauseBtn');
+  let isPlaying = true;
+  playPauseBtn.addEventListener('click', () => {
+    isPlaying = !isPlaying;
+    playPauseBtn.innerHTML = isPlaying
+      ? '<i class="fa-solid fa-pause"></i>'
+      : '<i class="fa-solid fa-play"></i>';
+  });
+
+  // ─── Progress bar interaction ───
+  const progressBar = document.getElementById('progressBar');
+  const progressFill = document.getElementById('progressFill');
+  progressBar.addEventListener('click', (e) => {
+    const rect = progressBar.getBoundingClientRect();
+    const pct = ((e.clientX - rect.left) / rect.width) * 100;
+    progressFill.style.width = Math.max(0, Math.min(100, pct)) + '%';
+  });
+
+  // ─── Episode list interaction ───
+  document.querySelectorAll('.episode-item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.episode-item').forEach(i => {
+        i.classList.remove('active');
+        const btn = i.querySelector('.btn:last-child');
+        if (btn) {
+          btn.className = 'btn btn-secondary btn-sm';
+          btn.style.padding = '8px 12px';
+          btn.innerHTML = '<i class="fa-solid fa-play"></i>';
+        }
+      });
+      item.classList.add('active');
+      const btn = item.querySelector('.btn:last-child');
+      if (btn) {
+        btn.className = 'btn btn-play';
+        btn.style.cssText = 'width:38px;height:38px;font-size:0.85rem;';
+        btn.innerHTML = '<i class="fa-solid fa-play"></i>';
+      }
+    });
+  });
+
+  // ─── Toast system ───
+  let toastId = 0;
+  function showToast(type, title, subtitle) {
+    const container = document.getElementById('toastContainer');
+    //const id = ++toastId;
+    const icons = {
+      success: 'fa-solid fa-check',
+      error: 'fa-solid fa-xmark',
+      info: 'fa-solid fa-info'
+    };
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    //toast.id = `toast-${id}`;
+    toast.innerHTML = `
+      <div class="toast-icon"><i class="${icons[type]}"></i></div>
+      <div>
+        <div class="toast-text">${title}</div>
+        ${subtitle ? `<div class="toast-sub">${subtitle}</div>` : ''}
+      </div>
+    `;
+    container.appendChild(toast);
+    // Trigger animation
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => toast.classList.add('show'));
+    });
+    // Auto dismiss
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => toast.remove(), 500);
+    }, 3500);
   }
-});
-async function search() {
-    var query = encodeURIComponent(document.getElementById('search-input').value);
-    var url = base + 'query=' + query + '&api_key=' + key;
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
 
-        const data = await response.json();
-        if (data.results.length > 0) {
-          document.getElementById('results').innerHTML='';
-            for (i in data.results) {
-    			result(data.results[i]);
-			}
-        } else {
-          document.getElementById('results').innerHTML='No results, sorry.';
-        }
+  // ─── Modal system ───
+  function openModal() {
+    document.getElementById('modalBackdrop').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
 
-    } catch (error) {
-        document.getElementById('results').innerHTML='Error fetching data:' + error;
+  function closeModal(e) {
+    if (e && e.target !== e.currentTarget) return;
+    document.getElementById('modalBackdrop').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Close modal with Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+    if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+      e.preventDefault();
+      document.querySelector('.search-bar input').focus();
     }
-}
-function result(json) {
-    document.getElementById('results').innerHTML += '<a href="movieplay.html?id=' + json.id + '"><img src="https://image.tmdb.org/t/p/w500' + json.poster_path + '" width="20%" height="auto"></a>';
-}
+  });
+    function watch(id, type) {
+    showToast('info', 'Playing', `Now playing ${type} with ID ${id}.`);
+    window.location.href = `/movies/watch.html?watch_id=${id}&type=${type}`;
+    //window.location.href = `https://player.videasy.net/${type}/${id}`;
+  }
 </script>
-
 </body>
 </html>

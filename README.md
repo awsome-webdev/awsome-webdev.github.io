@@ -1,6 +1,6 @@
 # Unblocked Games ❤
 
-# skip to the part you want 🤑
+# skip to the part you want
 [Recent Changes](#rc) [games list](#games) [upcoming](#what-is-coming)
 
  
