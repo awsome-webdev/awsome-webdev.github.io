@@ -1,0 +1,367 @@
+[
+    {
+        "name": "krillion<br>.io",
+        "url": "https://scram.awdv.dev/browse.html?url=krillion.io",
+        "id": "krillion"
+    },
+    {
+        "name": "Teritorial<br>IO",
+        "url": "https://scram.awdv.dev/browse?url=https://territorial.io/",
+        "id": "teritory"
+    },
+    {
+        "name": "Minecraft<br>yaa...",
+        "url": "games/mc18.html",
+        "id": "mc18"
+    },
+    {
+        "name": "Awesome<br>Tanks 2",
+        "url": "https://playcanv.as/p/JERg21J8/",
+        "id": "awesometanks"
+    },
+    {
+        "name": "Toy<br>Defense",
+        "url": "games/toydefense.html",
+        "id": "toydefense"
+    },
+    {
+        "name": "Block<br>Parkour3d",
+        "url": "games/parkour-block-3d-main/index.html",
+        "id": "blockparkour"
+    },
+    {
+        "name": "Iron<br>Snout",
+        "url": "games/Iron snout/index.html",
+        "id": "ironsnout"
+    },
+    {
+        "name": "Archer<br>Game",
+        "url": "https://playcanv.as/p/JERg21J8/",
+        "id": "archer"
+    },
+    {
+        "name": "Space<br>Buggy",
+        "url": "https://playcanv.as/p/3RerJIcy/",
+        "id": "spacebuggy"
+    },
+    {
+        "name": "Robot<br>Shooter",
+        "url": "https://playcanv.as/p/BAuoCOx6/",
+        "id": "robots"
+    },
+    {
+        "name": "Gangdomm<br>Style",
+        "url": "https://playcanv.as/p/iCL6sxgF/",
+        "id": "gangdomstyle"
+    },
+    {
+        "name": "Tower<br>Climb",
+        "url": "games/Tower_Climb.html",
+        "id": "towerclimb"
+    },
+    {
+        "name": "Clear<br>Game",
+        "url": "games/Clear.html",
+        "id": "clear"
+    },
+    {
+        "name": "Ore<br>Tycoon",
+        "url": "games/ORE Tycoon.html",
+        "id": "oretycoon"
+    },
+    {
+        "name": "Cash<br>Tycoon",
+        "url": "games/Cash Tycoon.html",
+        "id": "cashtycoon"
+    },
+    {
+        "name": "Park<br>Tycoon",
+        "url": "games/Themetycoon.html",
+        "id": "theme"
+    },
+    {
+        "name": "Dino<br>Game",
+        "url": "games/dinogame.html",
+        "id": "dinogame"
+    },
+    {
+        "name": "Candy Clicker",
+        "url": "games/Candy Clicker.html",
+        "id": "candyclicker"
+    },
+    {
+        "name": "Ninja<br>island",
+        "url": "",
+        "id": "nisland"
+    },
+    {
+        "name": "Tunnel<br>Run",
+        "url": "games/Tunnel Runner 3D.html",
+        "id": "tunnelrun"
+    },
+    {
+        "name": "Brawlers<br>Mutliplayer",
+        "url": "games/Brawl.io.html",
+        "id": "brawlers"
+    },
+    {
+        "name": "Smash Karts",
+        "url": "https://skunblocked.com/",
+        "id": "smashkarts"
+    },
+    {
+        "name": "Amongus Unblocked",
+        "url": "games/Amongus!/index.html",
+        "id": "amungus"
+    },
+    {
+        "name": "City<br>Builder",
+        "url": "https://lo-th.github.io/3d.city/index.html",
+        "id": "dcity"
+    },
+    {
+        "name": "Flappy Bird",
+        "url": "games/flappy bird.html",
+        "id": "flappy"
+    },
+    {
+        "name": "Robot<br>Tag",
+        "url": "games/Robot Tag.html",
+        "id": "robotag"
+    },
+    {
+        "name": "20<br>48",
+        "url": "gamepages/htmlgames/html5/2048/index.html",
+        "id": "fortyeight"
+    },
+    {
+        "name": "Ascii<br>Space",
+        "url": "gamepages/htmlgames/html5/asciispace/index.html",
+        "id": "artspace"
+    },
+    {
+        "name": "Astray<br>Maze",
+        "url": "gamepages/htmlgames/html5/astray/index.html",
+        "id": "astray"
+    },
+    {
+        "name": "Back<br>Country",
+        "url": "gamepages/htmlgames/html5/backcountry/index.html",
+        "id": "backcountry"
+    },
+    {
+        "name": "Basketball<br>Stars",
+        "url": "gamepages/htmlgames/html5/basketballstars/index.html",
+        "id": "basketballstars"
+    },
+    {
+        "name": "Blackhole<br>Square",
+        "url": "gamepages/htmlgames/html5/blackholesquare/index.html",
+        "id": "blackholesquare"
+    },
+    {
+        "name": "Bounce<br>Back",
+        "url": "gamepages/htmlgames/html5/bounceback/index.html",
+        "id": "bounceback"
+    },
+    {
+        "name": "ATARI<br>BREAKOUT",
+        "url": "gamepages/htmlgames/html5/breakout/index.html",
+        "id": "breakout"
+    },
+    {
+        "name": "Singleplayer<br>Chess",
+        "url": "gamepages/htmlgames/html5/chess/index.html",
+        "id": "chess"
+    },
+    {
+        "name": "Cookie<br>Clicker",
+        "url": "gamepages/htmlgames/html5/cookieclicker/index.html",
+        "id": "cookieclicker"
+    },
+    {
+        "name": "Crossy<br>Road",
+        "url": "gamepages/htmlgames/html5/crossyroad/index.html",
+        "id": "crossyroad"
+    },
+    {
+        "name": "Doge<br>Miner",
+        "url": "gamepages/htmlgames/html5/dogeminer/index.html",
+        "id": "dogeminer"
+    },
+    {
+        "name": "Duck<br>Life",
+        "url": "gamepages/htmlgames/html5/ducklife/index.html",
+        "id": "ducklife"
+    },
+    {
+        "name": "Duck<br>Life2",
+        "url": "gamepages/htmlgames/html5/ducklife2/index.html",
+        "id": "ducklife2"
+    },
+    {
+        "name": "Duck<br>Life3",
+        "url": "gamepages/htmlgames/html5/ducklife3/index.html",
+        "id": "ducklife3"
+    },
+    {
+        "name": "Duck<br>Life4",
+        "url": "gamepages/htmlgames/html5/ducklife4/index.html",
+        "id": "ducklife4"
+    },
+    {
+        "name": "Duck<br>Life5",
+        "url": "gamepages/htmlgames/html5/ducklife5/play/index.html",
+        "id": "ducklife5"
+    },
+    {
+        "name": "Edge<br>Surf",
+        "url": "gamepages/htmlgames/html5/edge-surf/index.html",
+        "id": "edgesurf"
+    },
+    {
+        "name": "Elastic<br>Morty",
+        "url": "gamepages/htmlgames/html5/elasticmorty/play/index.html",
+        "id": "elasticmorty"
+    },
+    {
+        "name": "Evil<br>Glitch",
+        "url": "gamepages/htmlgames/html5/evilglitch/index.html",
+        "id": "evilglitch"
+    },
+    {
+        "name": "Fireboy<br>Watergirl1",
+        "url": "gamepages/htmlgames/html5/fireboy-and-watergirl-1/play/index.html",
+        "id": "fireboyandwatergirl"
+    },
+    {
+        "name": "Fireboy<br>Watergirl2",
+        "url": "gamepages/htmlgames/html5/fireboy-and-watergirl-2/play/index.html",
+        "id": "fireboyandwatergirl2"
+    },
+    {
+        "name": "Fireboy<br>Watergirl3",
+        "url": "gamepages/htmlgames/html5/fireboy-and-watergirl-3/play/index.html",
+        "id": "fireboyandwatergirl3"
+    },
+    {
+        "name": "Fireboy<br>Watergirl4",
+        "url": "gamepages/htmlgames/html5/fireboy-and-watergirl-4/play/index.html",
+        "id": "fireboyandwatergirl4"
+    },
+    {
+        "name": "Friendly<br>Fire",
+        "url": "gamepages/htmlgames/html5/friendlyfire/index.html",
+        "id": "friendlyfire"
+    },
+    {
+        "name": "Geometry<br>Dash",
+        "url": "gamepages/htmlgames/html5/geometrydash/index.html",
+        "id": "geometrydash"
+    },
+    {
+        "name": "Moto<br>3XM",
+        "url": "gamepages/htmlgames/html5/motox3m/play/index.html",
+        "id": "motoxm"
+    },
+    {
+        "name": "Ninja<br>EvilCorp",
+        "url": "gamepages/htmlgames/html5/ninjavsevilcorp/index.html",
+        "id": "ninjaevilcorp"
+    },
+    {
+        "name": "HTML<br>Pacman",
+        "url": "gamepages/htmlgames/html5/pacman/index.html",
+        "id": "pacman"
+    },
+    {
+        "name": "Paper<br>IO",
+        "url": "gamepages/htmlgames/html5/paperio/index.html",
+        "id": "paperio"
+    },
+    {
+        "name": "Sand<br>Game",
+        "url": "gamepages/htmlgames/html5/physicsplayground/index.html",
+        "id": "sandgame"
+    },
+    {
+        "name": "Push<br>Back",
+        "url": "gamepages/htmlgames/html5/pushback/index.html",
+        "id": "pushback"
+    },
+    {
+        "name": "q1k3<br>(shooter)",
+        "url": "gamepages/htmlgames/html5/q1k3/index.html",
+        "id": "q1"
+    },
+    {
+        "name": "Pixle<br>Racer",
+        "url": "gamepages/htmlgames/html5/racer/index.html",
+        "id": "racer"
+    },
+    {
+        "name": "Retro<br>Bowl",
+        "url": "gamepages/htmlgames/html5/retrobowl/index.html",
+        "id": "retrobowl"
+    },
+    {
+        "name": "RoofTop<br>Sniper",
+        "url": "gamepages/htmlgames/html5/rooftopsniper/play/index.html",
+        "id": "rooftopsniper"
+    },
+    {
+        "name": "Run<br>3",
+        "url": "gamepages/htmlgames/html5/run3/index.html",
+        "id": "run3"
+    },
+    {
+        "name": "Stack<br>Game",
+        "url": "gamepages/htmlgames/html5/stack/play/index.html",
+        "id": "stack"
+    },
+    {
+        "name": "Stack<br>Tower",
+        "url": "gamepages/htmlgames/html5/stacktower/play/index.html",
+        "id": "stacktower"
+    },
+    {
+        "name": "Under<br>Run",
+        "url": "gamepages/htmlgames/html5/underrun/index.html",
+        "id": "underrun"
+    },
+    {
+        "name": "vex<br>3",
+        "url": "gamepages/htmlgames/html5/vex3/index.html",
+        "id": "vex3"
+    },
+    {
+        "name": "vex<br>4",
+        "url": "gamepages/htmlgames/html5/vex4/index.html",
+        "id": "vex4"
+    },
+    {
+        "name": "vex<br>5",
+        "url": "gamepages/htmlgames/html5/vex5/index.html",
+        "id": "vex5"
+    },
+    {
+        "name": "vex<br>6",
+        "url": "gamepages/htmlgames/html5/vex6/index.html",
+        "id": "vex6"
+    },
+    {
+        "name": "Web<br>Retro",
+        "url": "gamepages/htmlgames/html5/webretro/index.html",
+        "id": "retro"
+    },
+    {
+        "name": "Age<br>Of War",
+        "url": "games/ubg98.github.io-gh-pages/age-of-war-unblocked.html",
+        "id": "agewar"
+    },
+    {
+        "name": "openftront <br> io",
+        "url": "https://scram.awdv.dev/browse.html?url=https://openfront.io",
+        "id": "openfront"
+    }
+]

@@ -72,7 +72,7 @@ function closea(){
         app.setAttribute('src', '')
         parent.style.display = "block";
         document.getElementById('sidebar').style.display = 'block';
-        document.getElementById('main').style.display = 'block';
+        //document.getElementById('main').style.display = 'block';
         app.src = "";
     }
     if (close == 0){
